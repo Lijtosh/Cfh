@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Visit | CFH Chapel</title>
+    <link rel="canonical" href="https://www.cfhchapel.cc/planyourvisit"/>
+    <meta name="description" content="Visiting a new church can feel overwhelming but we want to make your experience at CFH Chapel as welcoming and smooth as possible! Find service times, location, and what to expect.">
+    <meta property="og:title" content="Plan Your Visit | CFH Chapel"/>
+    <meta property="og:url" content="https://www.cfhchapel.cc/planyourvisit"/>
+    <meta property="og:site_name" content="Cfh Chapel"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="/Website/Static/JPG/social-share-image.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"Cfh Chapel","url":"https://www.cfhchapel.cc"}</script>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Plan Your Visit | Cfh Chapel"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+<style>
+    /* Custom CSS and Color Palette for Mizizi Green/Gold Theme */
+
+    /* Define Mizizi Color Palette */
+    :root {
+        --cfh-green: #4CAF50;   /* Primary Green */
+        --cfh-green-rgb: 76, 175, 80;
+        --cfh-green-hover: #45a049;
+        --cfh-gold: #FFC107;    /* Accent Gold */
+        --cfh-gold-rgb: 255, 193, 7;
+        
+        /* Setting the main primary color to Green */
+        --cfh-primary: var(--cfh-green); 
+        --cfh-primary-rgb: var(--cfh-green-rgb);
+        --cfh-primary-hover: var(--cfh-green-hover);
+        
+        /* Custom dark color for the footer to match the intended design */
+        --cfh-footer-bg: #111827; /* Near black-charcoal */
+    }
+
+    /* Override Bootstrap primary with Green */
+    .btn-primary, .bg-primary, .text-primary, .border-primary {
+        --bs-primary-rgb: var(--cfh-primary-rgb) !important;
+        --bs-primary: var(--cfh-primary) !important;
+        --bs-btn-bg: var(--cfh-primary) !important;
+        --bs-btn-border-color: var(--cfh-primary) !important;
+        --bs-btn-hover-bg: var(--cfh-primary-hover) !important;
+        --bs-btn-hover-border-color: var(--cfh-primary-hover) !important;
+        --bs-btn-active-bg: var(--cfh-primary-hover) !important;
+        --bs-btn-active-border-color: var(--cfh-primary-hover) !important;
+    }
+    
+    /* 1. Navbar Logo Sizing */
+    .navbar-logo {
+        width: 150px; 
+        height: auto;
+    }
+
+    /* 2. Hero Section (Video Background) */
+    .hero-section {
+        position: relative;
+        height: 85vh; 
+        overflow: hidden;
+        padding-top: 56px; 
+    }
+
+    .bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        filter: brightness(0.65); 
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); 
+        z-index: 1;
+    }
+
+    /* Hero Text Styling */
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        padding-top: 50px; 
+        padding-bottom: 50px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); 
+    }
+    /* Gold accent for the main hero icon */
+    .hero-gold-icon {
+        color: var(--cfh-gold) !important;
+    }
+
+    /* 3. Call-to-Action Buttons */
+    .cta-button {
+        min-width: 250px;
+        border-radius: 50px; 
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .cta-button:hover {
+        transform: translateY(-2px); 
+        /* Shadow uses Green RGB */
+        box-shadow: 0 5px 15px rgba(var(--cfh-primary-rgb), 0.6); 
+    }
+
+    /* 4. Service Card Images */
+    .service-card-img {
+        height: 250px; 
+        object-fit: cover; 
+    }
+
+    /* Styling for What to Expect icons (Uses Green) */
+    .expect-icon {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0; 
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--cfh-primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 20px;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .expect-list-item {
+        transition: background-color 0.3s ease;
+    }
+    .expect-list-item:hover {
+        background-color: #383c40 !important; 
+    }
+
+    /* 5. Scroll to Top Button (Uses Green) */
+    .scroll-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        align-items: center; 
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+    }
+    
+    /* FAQ Icon (Uses Green) */
+    .faq-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--cfh-primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .accordion-button:not(.collapsed) {
+        background-color: #343a40 !important; 
+        /* Active button text color is Green */
+        color: var(--cfh-primary) !important;
+    }
+    
+    /* Custom background for location section for visual break */
+    #location-bg {
+        background-color: #f8f9fa; 
+    }
+
+    /* 6. Footer Styling (Fixing the Problem) */
+    .cfh-footer {
+        background-color: var(--cfh-footer-bg) !important; /* Use custom dark color */
+        color: #9ca3af; /* Light gray text for contrast */
+        border-top: 1px solid #374151; /* Darker border for separation */
+    }
+    .cfh-footer a {
+        color: #9ca3af; /* Link color */
+        text-decoration: none;
+    }
+    .cfh-footer a:hover {
+        color: var(--cfh-green); /* Hover effect using custom green */
+    }
+    .cfh-footer .text-cfh-green {
+        color: var(--cfh-green) !important; /* Explicitly use green for icons */
+    }
+    .cfh-footer-logo {
+        height: 64px; /* h-16 equivalent */
+        width: auto;
+    }
+    .cfh-footer-title {
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="/Website/Templates/visit.html" class="nav-link active fw-bold" aria-current="page">Plan Your Visit</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Series.html" class="nav-link">Sermons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Ministries.html" class="nav-link">Ministries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Payment.html" class="btn btn-outline-light ms-lg-3 my-2 my-lg-0">Give</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+        <video autoplay muted loop class="bg-video">
+            <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        
+        <div class="container position-relative z-1 hero-text">
+            <i class="fas fa-hand-heart fa-5x hero-gold-icon mb-3"></i>
+            <h1 class="display-1 fw-bolder mb-4 text-uppercase">Welcome Home.</h1> 
+            <p class="lead mb-4 fw-light fs-4 mx-auto" style="max-width: 800px;">
+                Visiting a new church can be intimidating, but we've made it easy. 
+                Experience the **genuine faith and family** of CFH Chapel.
+            </p>
+            
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 pt-3">
+                <a href="#location" class="btn btn-primary btn-lg cta-button fw-bold shadow-lg">
+                    <i class="fas fa-calendar-check me-2"></i> Plan My First Visit
+                </a>
+                 <a href="/Website/Templates/About.html" class="btn btn-outline-primary btn-lg cta-button fw-bold">
+                    <i class="fas fa-question-circle me-2"></i> About us
+                </a>
+                <a href="#faq" class="btn btn-outline-light btn-lg cta-button fw-bold">
+                    <i class="fas fa-question-circle me-2"></i> Read FAQs
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="services" class="container text-center py-5 py-md-5">
+            <h2 class="display-5 fw-bold mb-5 text-dark">Our Gathering Times</h2>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card h-100 shadow-lg border-0">
+                        <img src="/Website/Static/JPG/There-is-Hope-Thumb.jpg" alt="Sunday Worship Service" class="card-img-top service-card-img">
+                        <div class="card-body p-4">
+                            <h3 class="card-title fw-bolder text-dark"><i class="fas fa-sun text-primary me-2"></i>Sunday Worship</h3>
+                            <p class="card-text fs-4 text-primary fw-bolder">Main Worship Experience</p>
+                            <p class="text-muted fs-5">9:00 AM – 12:30 PM</p>
+                            <p class="text-muted small mb-0">CFH Kids & Youth Programs available.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="card h-100 shadow-lg border-0">
+                        <img src="/Website/Static/JPG/prayers.jpg" alt="Friday Hope Cells Prayer Meeting" class="card-img-top service-card-img">
+                        <div class="card-body p-4">
+                             <h3 class="card-title fw-bolder text-dark"><i class="fas fa-cross text-primary me-2"></i>Friday Prayer</h3>
+                            <p class="card-text fs-4 text-primary fw-bolder">Hope Cells Meeting</p>
+                            <p class="text-muted fs-5">**7:00 PM – 8:00 PM**</p>
+                            <p class="text-muted small mb-0">Mid-week Bible study and fellowship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 p-4 bg-light border-start border-primary border-5 rounded shadow-lg mx-auto" style="max-width: 650px;">
+                <p class="lead fw-bold mb-2 text-dark"><i class="fas fa-tshirt me-2 text-primary"></i>What Should I Wear?</p> 
+                <p class="mb-0 fs-5 text-muted">Casual and Comfortable! We encourage you to wear what makes you feel best. Come as you are.</p>
+            </div>
+        </section>  
+
+        <hr class="container my-5">
+
+        <div class="section bg-dark text-white py-5 py-md-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">Your First Sunday: Step-by-Step</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <ul class="list-group list-group-flush shadow-lg">
+                            <li class="list-group-item p-4 bg-dark text-white border-secondary d-flex align-items-start expect-list-item">
+                                <div class="expect-icon"><i class="fas fa-map-pin"></i></div>
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1">Arrival & Welcome</h4>
+                                    <p class="mb-0">Our Hospitality Team will meet you right at the door and show you to a convenient Visitor Parking spot. Don't be shy—we're here to help!</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item p-4 bg-dark text-white border-secondary d-flex align-items-start expect-list-item">
+                                <div class="expect-icon"><i class="fas fa-child"></i></div>
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1">CFH Kids Check-In</h4>
+                                    <p class="mb-0">If you have children (Ages 3-12), we'll guide you to our secure **CFH Kids** area for a fun, faith-filled morning with our screened volunteers.</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item p-4 bg-dark text-white border-secondary d-flex align-items-start expect-list-item">
+                                <div class="expect-icon"><i class="fas fa-bible"></i></div>
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1">Worship & Message</h4>
+                                    <p class="mb-0">Enjoy heartfelt worship and a practical, Bible-based message designed to apply to your everyday life. **Relax**, you won't be singled out!</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item p-4 bg-dark text-white border-secondary d-flex align-items-start expect-list-item">
+                                <div class="expect-icon"><i class="fas fa-gift"></i></div>
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1">Connect with Pastors</h4>
+                                    <p class="mb-0">Please stop by the Welcome Desk after the service. We have a special gift for you and would love to personally thank you for visiting!</p>
+                                </div>
+                            </li>  
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        <section id="kids-youth" class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-3">
+                        <img src="/Website/Static/JPG/cross.jpg" alt="Children and Youth laughing" class="img-fluid rounded shadow-lg">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-3 text-dark">Dedicated Programs for Your Family</h2>
+                        <p class="lead text-muted">We have engaging, age-specific programs designed to help every member of your family grow in their relationship with God.</p>
+
+                        <div class="d-flex align-items-start mb-4 p-3 bg-white rounded shadow-sm">
+                            <i class="fas fa-cubes fa-2x text-primary me-3 mt-1"></i>
+                            <div>
+                                <h4 class="fw-bold mb-0 text-dark">CFH Kids (Ages 3-12)</h4>
+                                <p class="mb-0 text-muted">A secure, dedicated program running during the entire Sunday service. Your kids will love learning the Bible!</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm">
+                            <i class="fas fa-users-line fa-2x text-primary me-3 mt-1"></i>
+                            <div>
+                                <h4 class="fw-bold mb-0 text-dark">Teens for Hope (Ages 13-18)</h4>
+                                <p class="mb-0 text-muted">A vibrant community for teens to discuss faith and life with dedicated, trustworthy leaders.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="/Website/Templates/Ministries.html" class="btn btn-primary btn-lg mt-4 cta-button">Explore All Ministries</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="container my-5">
+
+        <section id="location" class="py-5" id="location-bg">
+            <div class="container text-center">
+                <h2 class="display-5 fw-bold mb-5 text-dark">Where to Find Us</h2>
+                <p class="lead mb-4 mx-auto text-muted" style="max-width: 800px;">
+                    We are located in Ruiru, Kenya. Click the button below to open your navigation app and get live directions directly to our campus!
+                </p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow-lg mb-4 text-start border-0 border-start border-5 border-primary">
+                            <div class="card-body p-4">
+                                <h3 class="fw-bold text-dark"><i class="fas fa-map-marker-alt me-2 text-primary"></i>CFH Chapel Center</h3>
+                                <p class="fs-5 mb-0">Near Ruiru Town, Ruiru, Kenya</p>
+                                <p class="text-muted">Note: We offer ample, secure parking for all guests.</p>
+                                <a href="https://maps.app.goo.gl/ruiru-location-placeholder" target="_blank" class="btn btn-primary btn-lg cta-button mt-2"><i class="fas fa-directions me-2"></i>Get Directions on Google Maps</a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container rounded shadow-lg overflow-hidden" style="height: 450px;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.51731613768!2d36.945032549999995!3d-1.18957475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f342f53414995%3A0xf67883a903c72b22!2sRuiru!5e0!3m2!1sen!2ske!4v1714470000000!5m2!1sen!2ske" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="bg-dark text-white py-5 py-md-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">Frequently Asked Questions</h2>
+                
+                <div class="accordion accordion-flush mx-auto" id="faqAccordion" style="max-width: 900px;">
+                    <div class="accordion-item bg-dark text-white border-secondary">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <span class="faq-icon"><i class="fas fa-car"></i></span> Is there parking available?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white-50">
+                                Yes! We provide plenty of free and secure parking on-site, with designated Visitor Parking spaces closest to the main entrance. Our team will guide you upon arrival.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-dark text-white border-secondary">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="faq-icon"><i class="fas fa-clock"></i></span> How long is the Sunday service?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white-50">
+                                Our Sunday Worship Service runs from 9:00 AM to 12:30 PM, typically lasting about **2 hours and 30 minutes**. You're welcome to arrive early or stay late!
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item bg-dark text-white border-secondary">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span class="faq-icon"><i class="fas fa-hand-holding-dollar"></i></span> Do I have to give money?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white-50">
+                                Absolutely not. The offering is reserved for our regular members. As a visitor, please feel **zero obligation** to participate in the offering. The service is our gift to you!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <p class="lead">Still have a question? Contact us directly!</p>
+                    <a href="/Website/Templates/Contact.html" class="btn btn-primary btn-lg cta-button">Send Us a Message</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="cfh-footer py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="cfh-footer-logo mb-3">
+                    <p class="text-secondary">Delivering Hope, Building Faith.</p>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h5 class="cfh-footer-title fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled space-y-2">
+                        <li><a href="/Home.html" class="text-secondary">Home</a></li>
+                        <li><a href="/About.html" class="text-secondary">About Us</a></li>
+                        <li><a href="/Series.html" class="text-secondary">Sermons</a></li>
+                        <li><a href="/Ministries.html" class="text-secondary">Ministries</a></li>
+                        <li><a href="/Payment.html" class="text-secondary">Give</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h5 class="cfh-footer-title fw-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled space-y-3">
+                        <li class="d-flex align-items-center text-secondary mb-2"><i class="fas fa-location-dot me-3 text-cfh-green"></i><span>Ruiru, Kenya</span></li>
+                        <li class="d-flex align-items-center text-secondary mb-2"><i class="fas fa-phone me-3 text-cfh-green"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="d-flex align-items-center text-secondary"><i class="fas fa-envelope me-3 text-cfh-green"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h5 class="cfh-footer-title fw-bold mb-4">Follow Us</h5>
+                    <div class="d-flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="me-3 fs-4"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="fs-4"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5 pt-4 text-center border-top border-secondary opacity-50">
+                <p class="mb-0 fs-6">&copy; <span id="currentYear">2025</span> CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+        
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // ------------------ Scroll-to-Top Button ------------------
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>'; 
+        scrollToTopBtn.classList.add('btn', 'btn-primary', 'scroll-to-top', 'shadow'); 
+        document.body.appendChild(scrollToTopBtn);
+        
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) { 
+            scrollToTopBtn.style.display = 'flex'; 
+            scrollToTopBtn.style.justifyContent = 'center';
+            scrollToTopBtn.style.alignItems = 'center';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

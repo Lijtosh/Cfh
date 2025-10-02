@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons | Cfh Chapel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-green': '#4CAF50',   /* Primary Green */
+                        'cfh-green-hover': '#45a049',
+                        'cfh-gold': '#FFC107',    /* Accent Gold (Primary CTA) */
+                        'cfh-gold-hover': '#e0a800', 
+                        'cfh-dark-text': '#1F2937', /* Dark text for contrast against Gold */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e5e7eb;
+        }
+        .sermon-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sermon-card:hover {
+            transform: translateY(-8px);
+            /* Updated shadow color from blue to a Green/Gold tint (using cfh-green RGB 76, 175, 80) */
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        }
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.08; /* Reduced opacity to be less distracting */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <video autoplay muted loop class="bg-video">
+        <source src="/Website/Static/JPG/young-people-singing-and-dancing-at-a-concert-rear-view-SBV-327927158-preview(1).mp4" type="video/mp4">
+    </video>
+
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/Website/Templates/Home.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Home</a>
+                <a href="/Website/Templates/visit.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Plan Your Visit</a>
+                <a href="/Website/Templates/Series.html" class="text-white bg-cfh-green px-3 py-2 rounded-md hover:bg-cfh-green-hover transition duration-300">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Give</a>
+                <a href="/Website/Templates/Contact.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Contact Us</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <a href="/Website/Templates/Home.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+            <a href="/Website/Templates/visit.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Plan Your Visit</a>
+            <a href="/Website/Templates/Series.html" class="block px-4 py-2 text-sm text-white bg-cfh-green hover:bg-cfh-green-hover">Sermons</a>
+            <a href="/Website/Templates/Ministries.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Ministries</a>
+            <a href="/Website/Templates/Payment.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Give</a>
+            <a href="/Website/Templates/Contact.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+            <section class="bg-gray-800 rounded-xl p-8 mb-12 shadow-lg text-center relative overflow-hidden border border-cfh-green/30">
+                <div class="relative z-10">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-2">
+                        Latest Message: The Power of Prayer
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
+                        Delivered by <strong class="text-cfh-gold">Pastor Samuel Muturi</strong> on Sunday, Oct 1, 2025. | Length: 55:30
+                    </p>
+                    <a href="https://youtu.be/ubGaC555hCc" class="inline-block px-8 py-3 bg-cfh-gold text-cfh-dark-text text-lg font-semibold rounded-full hover:bg-cfh-gold-hover transition duration-300 shadow-xl transform hover:scale-105">
+                        <i class="fas fa-play-circle mr-2"></i> Watch Latest Sermon
+                    </a>
+                </div>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Browse by Series</h2>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-4 py-2 text-sm font-medium rounded-full bg-cfh-green text-white hover:bg-cfh-green-hover transition duration-200 shadow-md">
+                        All Messages
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-300 hover:bg-cfh-gold hover:text-cfh-dark-text transition duration-200">
+                        Break the Cycle
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-300 hover:bg-cfh-gold hover:text-cfh-dark-text transition duration-200">
+                        Finding Hope
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-300 hover:bg-cfh-gold hover:text-cfh-dark-text transition duration-200">
+                        The Sacraments
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-300 hover:bg-cfh-gold hover:text-cfh-dark-text transition duration-200">
+                        Standalone
+                    </button>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="sermon-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+                    <div class="relative">
+                        <img src="/Website/Static/JPG/sermon.jpg" alt="Praise and Worship" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-xs px-2 py-0.5 rounded-sm">45:12</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">Praise and Worship</h3>
+                        <p class="text-sm text-gray-400 mb-3">Join us in an uplifting session of music and praise.</p>
+                        <div class="text-xs text-gray-500 mb-4 space-y-1">
+                            <div class="flex items-center space-x-2"><i class="fas fa-user-tie text-cfh-green"></i><span>Speaker: **Pastor Samuel Muturi**</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt text-cfh-green"></i><span>Date: October 1, 2025</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-eye text-cfh-green"></i><span>Views: 1.5K</span></div>
+                        </div>
+                        <a href="https://www.youtube.com/live/ubGaC555hCc?si=lJT9vRhz6rLb3j7y" class="w-full text-center mt-4 inline-block px-4 py-2 bg-cfh-green text-white rounded-md hover:bg-cfh-green-hover transition duration-300">
+                            <i class="fab fa-youtube mr-2"></i> Watch Full Service
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+                    <div class="relative">
+                        <img src="/Website/Static/JPG/prayers.jpg" alt="Hope Cell Sessions" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-xs px-2 py-0.5 rounded-sm">38:20</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">Hope Cell Sessions</h3>
+                        <p class="text-sm text-gray-400 mb-3">Deeper insights and community discussion in our small groups.</p>
+                        <div class="text-xs text-gray-500 mb-4 space-y-1">
+                            <div class="flex items-center space-x-2"><i class="fas fa-user-tie text-cfh-green"></i><span>Speaker: **Elder Mercy W.**</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt text-cfh-green"></i><span>Date: September 25, 2025</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-eye text-cfh-green"></i><span>Views: 980</span></div>
+                        </div>
+                        <a href="https://www.youtube.com/live/c-5lcXOkZm0?si=EUNmIXH6oqCZYAaR" class="w-full text-center mt-4 inline-block px-4 py-2 bg-cfh-green text-white rounded-md hover:bg-cfh-green-hover transition duration-300">
+                            <i class="fab fa-youtube mr-2"></i> Watch Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+                    <div class="relative">
+                        <img src="/Website/Static/JPG/worship.jpg" alt="Break the Cycle" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-xs px-2 py-0.5 rounded-sm">1:02:10</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">Break the Cycle</h3>
+                        <p class="text-sm text-gray-400 mb-3">A powerful message on overcoming and renewal (Series Part 1).</p>
+                        <div class="text-xs text-gray-500 mb-4 space-y-1">
+                            <div class="flex items-center space-x-2"><i class="fas fa-user-tie text-cfh-green"></i><span>Speaker: **Pastor Samuel Muturi**</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt text-cfh-green"></i><span>Date: September 18, 2025</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-eye text-cfh-green"></i><span>Views: 3.1K</span></div>
+                        </div>
+                        <a href="https://youtu.be/qJt08U25x8k?si=ULTBzuxl07JOrxDJ" class="w-full text-center mt-4 inline-block px-4 py-2 bg-cfh-green text-white rounded-md hover:bg-cfh-green-hover transition duration-300">
+                            <i class="fab fa-youtube mr-2"></i> Watch Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+                    <div class="relative">
+                        <img src="/Website/Static/JPG/hope.jpg" alt="Hope" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-xs px-2 py-0.5 rounded-sm">50:45</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">Finding Hope</h3>
+                        <p class="text-sm text-gray-400 mb-3">A sermon on finding divine hope in all circumstances.</p>
+                        <div class="text-xs text-gray-500 mb-4 space-y-1">
+                            <div class="flex items-center space-x-2"><i class="fas fa-user-tie text-cfh-green"></i><span>Speaker: **Visiting Pastor**</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt text-cfh-green"></i><span>Date: September 11, 2025</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-eye text-cfh-green"></i><span>Views: 750</span></div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=sYos4KSsBCM" class="w-full text-center mt-4 inline-block px-4 py-2 bg-cfh-green text-white rounded-md hover:bg-cfh-green-hover transition duration-300">
+                            <i class="fab fa-youtube mr-2"></i> Watch Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+                    <div class="relative">
+                        <img src="/Website/Static/JPG/sacrament.jpg" alt="Sacrament" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-xs px-2 py-0.5 rounded-sm">40:05</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">The Sacrament</h3>
+                        <p class="text-sm text-gray-400 mb-3">A teaching on the importance of communion and covenant.</p>
+                        <div class="text-xs text-gray-500 mb-4 space-y-1">
+                            <div class="flex items-center space-x-2"><i class="fas fa-user-tie text-cfh-green"></i><span>Speaker: **Pastor John M.**</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt text-cfh-green"></i><span>Date: September 4, 2025</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-eye text-cfh-green"></i><span>Views: 1.2K</span></div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=pTSQjxJTK2Q" class="w-full text-center mt-4 inline-block px-4 py-2 bg-cfh-green text-white rounded-md hover:bg-cfh-green-hover transition duration-300">
+                            <i class="fab fa-youtube mr-2"></i> Watch Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+                    <div class="relative">
+                        <img src="/Website/Static/JPG/love.jpg" alt="Love" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-xs px-2 py-0.5 rounded-sm">52:59</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 truncate">The Unending Love</h3>
+                        <p class="text-sm text-gray-400 mb-3">A sermon about the transformative power of divine love.</p>
+                        <div class="text-xs text-gray-500 mb-4 space-y-1">
+                            <div class="flex items-center space-x-2"><i class="fas fa-user-tie text-cfh-green"></i><span>Speaker: **Pastor Samuel Muturi**</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt text-cfh-green"></i><span>Date: August 28, 2025</span></div>
+                            <div class="flex items-center space-x-2"><i class="fas fa-eye text-cfh-green"></i><span>Views: 2.8K</span></div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=Vg92pZoHlCc" class="w-full text-center mt-4 inline-block px-4 py-2 bg-cfh-green text-white rounded-md hover:bg-cfh-green-hover transition duration-300">
+                            <i class="fab fa-youtube mr-2"></i> Watch Now
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="mt-12 text-center">
+                <button class="px-8 py-3 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-600 transition duration-300 shadow-lg">
+                    Load More Messages
+                </button>
+            </div>
+
+            <section class="bg-gray-800 rounded-xl p-8 mt-16 shadow-lg border-l-4 border-cfh-gold flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-1">Listen On The Go</h2>
+                    <p class="text-gray-400">Subscribe to our podcast for audio messages and devotionals.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" title="Subscribe on Spotify" class="text-gray-400 hover:text-cfh-gold transition duration-200"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://www.youtube.com/cfhchapel" title="Subscribe on YouTube" class="text-gray-400 hover:text-red-600 transition duration-200"><i class="fab fa-youtube fa-2x"></i></a>
+                    <a href="#" title="Subscribe on Apple Podcasts" class="text-gray-400 hover:text-cfh-gold transition duration-200"><i class="fas fa-podcast fa-2x"></i></a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-950 py-12 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-cfh-green transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-cfh-green"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-cfh-green"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-cfh-green"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

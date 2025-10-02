@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Registration | CFH Chapel</title>
+    <link rel="canonical" href="https://www.cfhchapel.cc/events"/>
+    <meta name="description" content="Register for the latest upcoming events, missions, and fellowship opportunities at CFH Chapel.">
+    <meta property="og:title" content="Events & Registration | CFH Chapel"/>
+    <meta property="og:url" content="https://www.cfhchapel.cc/events"/>
+    <meta property="og:site_name" content="Cfh Chapel"/>
+    <meta property="og:type" content="website"/>
+    <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"Cfh Chapel","url":"https://www.cfhchapel.cc"}</script>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Events & Registration | Cfh Chapel"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Website/Static/Css/events.css"> 
+
+<style>
+    /* Custom CSS and Color Palette (Mizizi Theme: Green/Gold) */
+
+    :root {
+        --cfh-primary: #4CAF50; /* Mizizi Primary Green */
+        --cfh-primary-hover: #45a049;
+        --cfh-dark: #212529;
+        --cfh-gold-accent: #FFC107; /* Mizizi Gold Accent */
+    }
+
+    /* Global Primary Color Override (Now Green) */
+    .btn-primary, .bg-primary, .text-primary, .border-primary {
+        --bs-primary-rgb: 76, 175, 80; /* RGB for #4CAF50 */
+        --bs-primary: var(--cfh-primary) !important;
+        --bs-btn-bg: var(--cfh-primary) !important;
+        --bs-btn-border-color: var(--cfh-primary) !important;
+        --bs-btn-hover-bg: var(--cfh-primary-hover) !important;
+        --bs-btn-hover-border-color: var(--cfh-primary-hover) !important;
+    }
+    
+    /* Outline Primary Override (Now Green) */
+    .btn-outline-primary {
+        --bs-btn-color: var(--cfh-primary) !important;
+        --bs-btn-border-color: var(--cfh-primary) !important;
+        --bs-btn-hover-color: #fff !important;
+        --bs-btn-hover-bg: var(--cfh-primary-hover) !important;
+        --bs-btn-hover-border-color: var(--cfh-primary-hover) !important;
+    }
+
+    /* Navbar Logo Sizing */
+    .navbar-logo {
+        width: 150px; 
+        height: auto;
+    }
+
+    /* Hero Styling for Video Background */
+    .events-hero {
+        position: relative;
+        min-height: 50vh;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        overflow: hidden; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        filter: brightness(0.6); 
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4); 
+        z-index: 1;
+    }
+    
+    .events-hero .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Event Card Styling */
+    .event-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .event-card-img {
+        height: 200px;
+        object-fit: cover;
+    }
+    /* Date badge now uses Green */
+    .event-date-badge {
+        background-color: var(--cfh-primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 0 0 0 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-weight: bold;
+    }
+
+    /* Registration Form Styling */
+    #event-registration {
+        background-color: #f8f9fa; 
+        padding: 60px 0;
+    }
+    .registration-form-card {
+        max-width: 650px;
+        margin: auto;
+        padding: 40px;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+    .cta-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        transition: transform 0.2s ease;
+    }
+    .cta-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Footer Styles (Ensuring Consistency) */
+    .footer-col h3 {
+        color: white;
+    }
+    .footer-col a {
+        color: #adb5bd; /* Light grey for links */
+    }
+    /* Footer link hover now Green */
+    .footer-col a:hover {
+        color: var(--cfh-primary); 
+    }
+    .social-links a {
+        color: white;
+        transition: color 0.3s ease;
+    }
+    /* Footer social link hover now Green */
+    .social-links a:hover {
+        color: var(--cfh-primary) !important; 
+    }
+    .scroll-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        align-items: center; 
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="/Website/Templates/visit.html" class="nav-link">Plan Your Visit</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Series.html" class="nav-link">Sermons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Ministries.html" class="nav-link">Ministries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Payment.html" class="btn btn-outline-light ms-lg-3 my-2 my-lg-0">Give</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Contact.html" class="nav-link active fw-bold" aria-current="page">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="events-hero text-center">
+        <video autoplay muted loop class="bg-video">
+            <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="container">
+            <i class="fas fa-calendar-alt fa-3x text-primary mb-3"></i>
+            <h1 class="display-3 fw-bolder mb-3">Join Our Upcoming Events</h1>
+            <p class="lead mb-0 mx-auto fs-5" style="max-width: 800px;">
+                Experience faith, fun, and fellowship! Check out what's happening and secure your spot today.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section id="upcoming-events" class="py-5 bg-white">
+            <div class="container">
+                <h2 class="text-center display-5 fw-bold mb-5">Featured Events</h2>
+                
+                <div class="row g-4 justify-content-center">
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card shadow h-100">
+                            <div class="position-relative">
+                                <img src="/Website/Static/JPG/youth-game-night-placeholder.jpg" class="card-img-top event-card-img" alt="Youth playing games">
+                                <span class="event-date-badge"><i class="far fa-calendar-check me-1"></i> OCT 20</span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold text-dark">Youth Game Night</h4>
+                                <p class="text-muted mb-2"><i class="fas fa-clock me-2"></i> 6:00 PM - 8:00 PM</p>
+                                <p class="card-text">A fun, high-energy night for all teens (Ages 13-18). Pizza, console games, board games, and great fellowship! Don't miss it.</p>
+                                <a href="#event-registration" class="btn btn-sm btn-outline-primary mt-2">Register for this Event</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card shadow h-100">
+                            <div class="position-relative">
+                                <img src="/Website/Static/JPG/mission-trip-placeholder.jpg" class="card-img-top event-card-img" alt="Mission team helping community">
+                                <span class="event-date-badge"><i class="far fa-calendar-check me-1"></i> NOV 1 - 7</span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold text-dark">Local Outreach Mission</h4>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i> Ruiru Community</p>
+                                <p class="card-text">Join us for a powerful week of serving our local community. Help with small construction projects and food distribution. Application required.</p>
+                                <a href="#event-registration" class="btn btn-sm btn-outline-primary mt-2">Register for this Event</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card shadow h-100">
+                            <div class="position-relative">
+                                <img src="/Website/Static/JPG/women-fellowship-placeholder.jpg" class="card-img-top event-card-img" alt="Women sharing fellowship">
+                                <span class="event-date-badge"><i class="far fa-calendar-check me-1"></i> OCT 28</span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold text-dark">Women's Fellowship Brunch</h4>
+                                <p class="text-muted mb-2"><i class="fas fa-utensils me-2"></i> 10:00 AM - 12:00 PM</p>
+                                <p class="card-text">A special morning of connection, inspiration, and delicious food for the ladies of CFH Chapel. Space is limited, register early!</p>
+                                <a href="#event-registration" class="btn btn-sm btn-outline-primary mt-2">Register for this Event</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="event-registration" class="py-5 bg-light">
+            <div class="container">
+                <div class="registration-form-card">
+                    <h2 class="text-center fw-bold mb-4 text-dark">Secure Your Spot</h2>
+                    <form action="submit-event.php" method="POST" id="eventForm" class="row g-3">
+                        
+                        <div class="col-12">
+                            <label for="event" class="form-label fw-semibold">Choose Event *</label>
+                            <select id="event" name="event" class="form-select form-control" required>
+                                <option value="" selected disabled>Select the event you wish to attend</option>
+                                <option value="youth-game-night">Youth Game Night (Oct 20)</option>
+                                <option value="local-outreach">Local Outreach Mission (Nov 1 - 7)</option>
+                                <option value="womens-brunch">Women's Fellowship Brunch (Oct 28)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label fw-semibold">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="Your Full Name">
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fw-semibold">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="name@example.com">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="notes" class="form-label fw-semibold">Notes / Questions (Optional)</label>
+                            <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="Tell us if you have any special requirements or questions..."></textarea>
+                        </div>
+                    
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-primary cta-btn shadow">Complete Registration</button>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <small class="text-muted">* Required Fields</small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row border-bottom border-secondary pb-4 mb-4">
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">CFH Chapel</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="/Website/Templates/Home.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="/Website/Templates/Contact.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                        <li><a href="/Website/Templates/Projects.html" class="text-white-50 text-decoration-none">Projects</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">Resources</h3>
+                    <ul class="list-unstyled">
+                       <li><a href="/Website/Templates/Series.html" class="text-white-50 text-decoration-none">Sermon Series</a></li>
+                       <li><a href="/Website/Templates/Payment.html" class="text-white-50 text-decoration-none">Online Giving</a></li>
+                       <li><a href="https://www.instagram.com/cfh_chapel" class="text-white-50 text-decoration-none">Instagram</a></li>
+                       <li><a href="https://www.facebook.com/cfhchapel" class="text-white-50 text-decoration-none">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">Contact Info</h3>
+                    <ul class="list-unstyled">
+                       <li><a href="#" class="text-white-50 text-decoration-none"><i class="fas fa-map-marker-alt me-2 text-primary"></i>Ruiru, Kenya</a></li>
+                       <li><a href="tel:0791043805" class="text-white-50 text-decoration-none"><i class="fas fa-phone me-2 text-primary"></i>0791043805</a></li>
+                       <li><a href="tel:0720950828" class="text-white-50 text-decoration-none"><i class="fas fa-phone me-2 text-primary"></i>0720950828</a></li>
+                       <li><a href="mailto:cfhmin@gmail.com" class="text-white-50 text-decoration-none"><i class="fas fa-envelope me-2 text-primary"></i>cfhmin@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">Follow Us</h3>
+                    <div class="social-links d-flex gap-3">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-white"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-white"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-white"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-white-50">
+                © <span id="currentYear"></span> CFH Chapel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // ------------------ Scroll-to-Top Button ------------------
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        // Button uses Green Primary color
+        scrollToTopBtn.classList.add('btn', 'btn-primary', 'scroll-to-top', 'shadow'); 
+        document.body.appendChild(scrollToTopBtn);
+        
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) { 
+            scrollToTopBtn.style.display = 'flex'; 
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // ------------------ Form Submission Handling ------------------
+        document.querySelectorAll("form").forEach((form) => {
+              form.addEventListener("submit", function(event) {
+                event.preventDefault(); 
+            
+                const fullNameInput = form.querySelector('input[name="fullName"]');
+                const emailInput = form.querySelector('input[name="email"]');
+                const eventSelect = form.querySelector('select[name="event"]');
+                
+                if (fullNameInput.value === "" || emailInput.value === "" || eventSelect.value === "") {
+                  console.log("Please fill out all required fields (Name, Email, and Event selection).");
+                  alert("Please fill out all required fields (Name, Email, and Event selection).");
+                  return;
+                }
+            
+                // Success feedback
+                console.log("Registration successful! You're signed up for: " + eventSelect.value);
+                alert("Registration successful! You're signed up for: " + eventSelect.options[eventSelect.selectedIndex].text + ". Check your email for details.");
+            
+                // Reset form after submission
+                form.reset();
+              });
+            });
+    </script>
+</body>
+</html>

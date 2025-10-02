@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CFH Chapel</title>
+
+    <link rel="canonical" href="https://www.cfhchapel.cc/contact"/>
+    <meta name="description" content="Reach out to CFH Chapel with a message, question, or prayer request. Find our service times, location, and contact details."/>
+    <meta property="og:title" content="Contact | Cfh Chapel"/>
+    <meta property="og:url" content="https://www.cfhchapel.cc/contact"/>
+    <meta property="og:site_name" content="Cfh Chapel"/>
+    <meta property="og:type" content="website"/>
+    <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"Cfh Chapel","url":"https://www.cfhchapel.cc"}</script>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Contact | Cfh Chapel"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-dark': '#1F2937',    /* Deep Navy/Dark Gray (Body/Footer) */
+                        'cfh-dark-lighter': '#2c3a4d', /* For card backgrounds/forms */
+                        'cfh-green': '#4CAF50',   /* Primary Green (Accents/Icons/Hover) */
+                        'cfh-green-hover': '#45a049', 
+                        'cfh-gold': '#FFC107',    /* Accent Gold (Primary CTA/Focus Ring) */
+                        'cfh-gold-hover': '#e0a800', 
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styles using Mizizi dark color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cfh-dark); 
+            color: #f3f4f6;
+        }
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.2; 
+        }
+        .header-bg {
+            background-color: rgba(31, 41, 55, 0.9); /* Opaque cfh-dark for header */
+            backdrop-filter: blur(10px);
+        }
+        .form-container {
+            /* Use the slightly lighter Mizizi dark color for the forms section */
+            background-color: var(--cfh-dark-lighter); 
+            border: 1px solid #30363d;
+        }
+    </style>
+</head>
+<body class="bg-cfh-dark text-gray-100">
+
+    <video autoplay muted loop class="bg-video">
+        <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+    </video>
+
+    <header class="sticky top-0 z-50 header-bg shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/Website/Templates/Home.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Home</a>
+                <a href="/Website/Templates/visit.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Plan Your Visit</a>
+                <a href="/Website/Templates/Series.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Give</a>
+                <a href="/Website/Templates/Contact.html" class="text-white bg-cfh-green px-3 py-2 rounded-md hover:bg-cfh-green-hover transition duration-300">Contact Us</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-cfh-green" id="mobile-menu-btn">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-cfh-dark-lighter">
+            <a href="/Website/Templates/Home.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+            <a href="/Website/Templates/visit.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Plan Your Visit</a>
+            <a href="/Website/Templates/Series.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Sermons</a>
+            <a href="/Website/Templates/Ministries.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Ministries</a>
+            <a href="/Website/Templates/Payment.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Give</a>
+            <a href="/Website/Templates/Contact.html" class="block px-4 py-2 text-sm text-white bg-cfh-green hover:bg-cfh-green-hover">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">Get In Touch With <span class="text-cfh-green">CFH Chapel</span></h1>
+                    <p class="mt-4 text-lg text-gray-300">
+                        We're here to help, answer questions, and pray for you. Choose the best way to connect below!
+                    </p>
+                </div>
+
+                <div class="mt-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <div class="flex flex-col form-container rounded-2xl p-8 shadow-2xl lg:col-span-1 h-full">
+                        <h2 class="text-3xl font-bold text-white mb-6 border-b border-cfh-green pb-3">Contact Details</h2>
+                        <div class="space-y-8 text-lg flex-grow">
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-map-marker-alt text-xl text-cfh-green mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="font-semibold text-white">Our Location</h3>
+                                    <p class="text-gray-300">Ruiru, Kenya</p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ruiru" target="_blank" class="mt-1 inline-block text-cfh-green font-semibold hover:text-cfh-green-hover transition duration-200 text-base">Get Directions →</a>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                                <i class="fas fa-phone text-xl text-cfh-green mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="font-semibold text-white">Call or WhatsApp</h3>
+                                    <p class="text-gray-300">0791 043 805  |  0720 950 828</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                                <i class="fas fa-envelope text-xl text-cfh-green mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="font-semibold text-white">Send an Email</h3>
+                                    <a href="mailto:cfhmin@gmail.com" class="text-gray-300 hover:text-cfh-green">cfhmin@gmail.com</a>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                                <i class="fas fa-clock text-xl text-cfh-green mt-1 w-6 text-center"></i>
+                                <div>
+                                    <h3 class="font-semibold text-white">Worship Service</h3>
+                                    <p class="text-gray-300">Sundays: 9:00 AM - 12:30 PM</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2 space-y-10">
+                        
+                        <div class="flex flex-col form-container rounded-2xl p-8 shadow-2xl">
+                            <h2 class="text-3xl font-bold text-white mb-6 border-b border-cfh-green pb-3">General Inquiry</h2>
+                            <p class="text-gray-400 mb-6">Use this form for general questions, feedback, or to learn more about us.</p>
+                            <form action="#" method="POST" id="general-contact-form" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                                    <input type="text" name="name" id="name" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cfh-gold sm:text-sm sm:leading-6">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                                    <input type="email" name="email" id="email" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cfh-gold sm:text-sm sm:leading-6">
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject (e.g., Volunteer Inquiry, Partnership)</label>
+                                    <input type="text" name="subject" id="subject" class="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cfh-gold sm:text-sm sm:leading-6">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                    <textarea name="message" id="message" rows="4" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cfh-gold sm:text-sm sm:leading-6"></textarea>
+                                </div>
+                                <button type="submit" data-form-type="general" class="w-full px-8 py-3 bg-cfh-gold text-cfh-dark font-bold rounded-md shadow-xl hover:bg-cfh-gold-hover transition duration-300 transform hover:scale-105">
+                                    <i class="fas fa-paper-plane mr-2"></i> Send Inquiry
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="flex flex-col form-container rounded-2xl p-8 shadow-2xl border-cfh-green border-2">
+                            <h2 class="text-3xl font-bold text-white mb-6 border-b border-cfh-green pb-3"><i class="fas fa-hands-praying text-cfh-green mr-2"></i>Submit a Prayer Request</h2>
+                            <p class="text-gray-400 mb-6">Our prayer team is here to stand with you. All requests are confidential.</p>
+                            <form action="#" method="POST" id="prayer-request-form" class="space-y-6">
+                                <div>
+                                    <label for="prayer-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name (Optional)</label>
+                                    <input type="text" name="prayer-name" id="prayer-name" class="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cfh-gold sm:text-sm sm:leading-6">
+                                </div>
+                                <div>
+                                    <label for="prayer-request" class="block text-sm font-medium text-gray-300 mb-2">Your Prayer Request</label>
+                                    <textarea name="prayer-request" id="prayer-request" rows="5" required class="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cfh-gold sm:text-sm sm:leading-6" placeholder="Share your need or request for prayer..."></textarea>
+                                </div>
+                                <button type="submit" data-form-type="prayer" class="w-full px-8 py-3 bg-cfh-green text-white font-bold rounded-md shadow-xl hover:bg-cfh-green-hover transition duration-300 transform hover:scale-105">
+                                    <i class="fas fa-heart mr-2"></i> Submit Prayer Request
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="w-full h-[450px]">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127648.3058800411!2d36.93087319523566!3d-1.1536622071866562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f38a78cb4e50d%3A0xdaa7fad9c2cbf0fb!2sRuiru!5e0!3m2!1sen!2ske!4v1710840109919!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-cfh-dark py-12 border-t border-cfh-dark-lighter mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-cfh-green transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-cfh-green"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-cfh-green"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-cfh-green"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-cfh-dark-lighter pt-8 text-center text-gray-500">
+                <p>© <span id="currentYear"></span> CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle script
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Combined form submission script
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); 
+                
+                const formType = form.querySelector('button[type="submit"]').getAttribute('data-form-type');
+
+                if (formType === 'prayer') {
+                    // Simple check for the prayer request content
+                    const request = document.getElementById('prayer-request').value;
+                    if (request.trim() === '') {
+                        alert("Please enter your prayer request.");
+                        return;
+                    }
+                    alert("Your prayer request has been submitted. Our team is praying for you!");
+                } else if (formType === 'general') {
+                    // Simple check for required general contact fields
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+
+                    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                        alert("Please fill in all required fields (Name, Email, Message).");
+                        return;
+                    }
+                    alert("Thank you for your message! We'll be in touch soon.");
+                }
+
+                // NOTE: For a real website, add code here to send the form data
+                // to a backend service or an email API.
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>

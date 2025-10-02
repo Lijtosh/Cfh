@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastercard Donation Form (Secure)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-green': '#4CAF50',   /* Primary Green */
+                        'cfh-green-hover': '#45a049',
+                        'cfh-gold': '#FFC107',    /* Accent Gold (Primary CTA/Focus Ring) */
+                        'cfh-gold-hover': '#e0a800', 
+                        'cfh-dark-text': '#1F2937', /* Dark text for contrast against Gold */
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Spinner for loading state */
+        .spinner-border {
+            display: inline-block;
+            vertical-align: -0.125em;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8">
+        <div class="flex flex-col items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Secure Card Donation</h1>
+            <div class="flex space-x-2 mt-4">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard Logo" class="h-8 w-auto">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa Logo" class="h-8 w-auto">
+            </div>
+            <p class="text-sm text-gray-500 mt-2">Powered by a secure, PCI-compliant gateway.</p>
+        </div>
+
+        <form id="paymentForm" class="space-y-6">
+
+            <p class="text-sm text-red-600 border-l-4 border-red-600 pl-3 py-1 bg-red-50 font-semibold">
+                WARNING: Direct handling of card data is highly insecure. This form is for illustration and requires a secure payment gateway integration.
+            </p>
+
+            <div>
+                <label for="fullName" class="block text-gray-700 font-medium mb-1">Name on Card</label>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cfh-green transition duration-200">
+            </div>
+
+            <div>
+                <label for="cardNumber" class="block text-gray-700 font-medium mb-1">Card Number (Secure Field)</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx" disabled 
+                       class="w-full px-4 py-2 bg-gray-200 border border-gray-300 rounded-lg">
+                <p class="text-xs text-gray-500 mt-1">This field should be replaced by a secure input from your payment processor.</p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4">
+                <div class="col-span-2">
+                    <label for="expiryDate" class="block text-gray-700 font-medium mb-1">Expiry Date (MM/YY)</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM / YY" disabled
+                           class="w-full px-4 py-2 bg-gray-200 border border-gray-300 rounded-lg">
+                </div>
+
+                <div>
+                    <label for="cvc" class="block text-gray-700 font-medium mb-1">CVC</label>
+                    <input type="text" id="cvc" name="cvc" placeholder="XXX" disabled
+                           class="w-full px-4 py-2 bg-gray-200 border border-gray-300 rounded-lg">
+                </div>
+            </div>
+            
+            <div>
+                <label for="amount" class="block text-gray-700 font-medium mb-1">Amount to Contribute (USD/KES)</label>
+                <input type="number" id="amount" name="amount" placeholder="e.g., 50.00" min="1" step="0.01" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cfh-green transition duration-200">
+            </div>
+
+            <button type="submit" id="submitBtn"
+                    class="w-full bg-cfh-gold text-cfh-dark-text font-bold py-3 px-4 rounded-lg shadow-md hover:bg-cfh-gold-hover focus:outline-none focus:ring-2 focus:ring-cfh-green focus:ring-offset-2 transition duration-200">
+                Securely Pay with Card 💳
+            </button>
+        </form>
+    </div>
+
+    <div id="statusModal" class="modal" style="display: none;">
+        <div class="modal-content max-w-sm">
+            <h2 id="modalTitle" class="text-2xl font-semibold mb-4 text-cfh-green">Processing Payment...</h2>
+            <p id="modalMessage" class="text-gray-700 mb-6">Connecting to payment gateway. Please wait.</p>
+            <div id="loadingSpinner" class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full border-cfh-green border-r-transparent mx-auto mb-4" role="status"></div>
+            <p id="modalError" class="text-sm text-red-600 font-bold hidden"></p>
+            <button id="closeModal" class="mt-6 px-6 py-2 bg-cfh-green text-white rounded-lg hover:bg-cfh-green-hover transition duration-200">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('paymentForm');
+        const modal = document.getElementById('statusModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalError = document.getElementById('modalError');
+        const spinner = document.getElementById('loadingSpinner');
+        const submitBtn = document.getElementById('submitBtn');
+        const closeModalBtn = document.getElementById('closeModal');
+
+        // --- Modal Control Functions ---
+        function showModal(title, message, isError = false) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            modalTitle.classList.toggle('text-cfh-green', !isError);
+            modalTitle.classList.toggle('text-red-600', isError);
+            spinner.classList.add('hidden');
+            modalError.classList.add('hidden');
+            modal.style.display = 'flex';
+        }
+
+        function showLoading() {
+            modalTitle.textContent = "Processing Payment...";
+            modalMessage.textContent = "Connecting to the secure payment gateway. Please wait.";
+            modalTitle.classList.add('text-cfh-green');
+            modalTitle.classList.remove('text-red-600');
+            spinner.classList.remove('hidden');
+            modalError.classList.add('hidden');
+            modal.style.display = 'flex';
+        }
+        
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // --- Form Submission Logic (Simulated Gateway Tokenization) ---
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            
+            // In a real application, you would first call the Gateway SDK (e.g., Stripe.js) 
+            // to tokenize the card data, then send the TOKEN to your backend.
+            
+            const fullName = document.getElementById('fullName').value;
+            const amount = document.getElementById('amount').value;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+            showLoading(); // Show loading modal
+            
+            const payload = {
+                donorName: fullName,
+                amount: parseFloat(amount),
+                // In a real scenario, this would be the secure 'token' returned by the SDK:
+                paymentToken: 'simulated_card_token_12345', 
+            };
+            
+            // --- The functional integration point (Backend API call) ---
+            try {
+                // NOTE: REPLACE THIS URL with your actual backend payment processing endpoint
+                const response = await fetch('/api/process-card-donation', { 
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+                
+                const data = await response.json();
+
+                if (response.ok && data.status === 'success') {
+                    // Success: Payment successfully processed by the gateway!
+                    showModal(
+                        "Donation Success! 🎉", 
+                        "Thank you! Your card payment was successfully processed. You will receive an email receipt shortly.",
+                        false
+                    );
+                    form.reset(); 
+
+                } else {
+                    // Error response from the server/gateway
+                    const errorMsg = data.message || "Card payment failed. Please check your card details or contact support.";
+                    showModal(
+                        "Payment Failed", 
+                        errorMsg, 
+                        true
+                    );
+                }
+
+            } catch (error) {
+                console.error('Network or Request Error:', error);
+                showModal(
+                    "Error", 
+                    "A network error occurred. Please try submitting your donation again.", 
+                    true
+                );
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Securely Pay with Card 💳';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Cfh Chapel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-dark': '#1F2937',    /* Deep Navy/Dark Gray (Mizizi background/cards) */
+                        'cfh-green': '#4CAF50',   /* Primary Green (Accents/Text) */
+                        'cfh-gold': '#FFC107',    /* Accent Gold (CTA Button) */
+                        'cfh-dark-lighter': '#2c3a4d', /* For card backgrounds */
+                        'cfh-gold-hover': '#e0a800', /* Darker gold for hover */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1F2937; /* cfh-dark */
+            color: #f3f4f6; /* Light gray text for contrast */
+        }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-8px);
+            /* Soft shadow using cfh-green */
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.25); 
+        }
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.1; 
+        }
+    </style>
+</head>
+<body class="bg-cfh-dark text-gray-100">
+
+    <header class="bg-cfh-dark-lighter shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto">
+            </a>
+            <div id="desktop-nav" class="hidden md:flex space-x-6 items-center">
+                <a href="/Website/Templates/Home.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Home</a>
+                <a href="/Website/Templates/About.html" class="text-cfh-green font-bold transition duration-300 border-b-2 border-cfh-green pb-1">About Us</a>
+                <a href="/Website/Templates/visit.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Plan Your Visit</a>
+                <a href="/Website/Templates/Series.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Give</a>
+                <a href="/Website/Templates/Contact.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Contact Us</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-cfh-green">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-cfh-dark-lighter pb-4">
+             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="/Website/Templates/Home.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                <a href="/Website/Templates/About.html" class="block px-3 py-2 rounded-md text-base font-medium text-cfh-green bg-gray-700">About Us</a>
+                <a href="/Website/Templates/visit.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Plan Your Visit</a>
+                <a href="/Website/Templates/Series.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Give</a>
+                <a href="/Website/Templates/Contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <video autoplay muted loop class="bg-video">
+        <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+    </video>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+            <section class="text-center mb-16">
+                <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4">
+                    About <span class="text-cfh-green">CFH Chapel</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    A family that loves Christ, serves one another, and seeks to make a difference.
+                </p>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+                <div class="section-card bg-cfh-dark-lighter rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <i class="fas fa-cross text-4xl text-cfh-green"></i>
+                        <h2 class="text-3xl font-bold text-white">Our Mission</h2>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        We exist to **Deliver Hope**—to share the love of Jesus, walk alongside each other in faith, and make a real difference in our communities.
+                    </p>
+                </div>
+                <div class="section-card bg-cfh-dark-lighter rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <i class="fas fa-eye text-4xl text-cfh-green"></i>
+                        <h2 class="text-3xl font-bold text-white">Our Vision</h2>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        We are a family that loves Christ above all, loves each other deeply, and discovers and uses our gifts for God's Service.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-cfh-dark-lighter rounded-xl p-8 md:p-12 mb-16 shadow-lg">
+                <h2 class="text-3xl font-bold text-white text-center mb-8">Our Core Values</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                    <div class="p-4 bg-cfh-dark rounded-lg">
+                        <i class="fas fa-heart text-cfh-green text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-white">Love</h3>
+                        <p class="text-sm text-gray-400">We care for one another as Christ cares for us.</p>
+                    </div>
+                    <div class="p-4 bg-cfh-dark rounded-lg">
+                        <i class="fas fa-hand-holding-dollar text-cfh-green text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-white">Stewardship</h3>
+                        <p class="text-sm text-gray-400">We use our gifts and resources wisely for God's glory.</p>
+                    </div>
+                    <div class="p-4 bg-cfh-dark rounded-lg">
+                        <i class="fas fa-book text-cfh-green text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-white">Discipleship</h3>
+                        <p class="text-sm text-gray-400">We follow Jesus and help others do the same.</p>
+                    </div>
+                    <div class="p-4 bg-cfh-dark rounded-lg">
+                        <i class="fas fa-praying-hands text-cfh-green text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-white">Devotion</h3>
+                        <p class="text-sm text-gray-400">We commit to prayer, studying the Word, and worship.</p>
+                    </div>
+                    <div class="p-4 bg-cfh-dark rounded-lg">
+                        <i class="fas fa-star text-cfh-green text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-white">Faith</h3>
+                        <p class="text-sm text-gray-400">We trust God for big things and step out boldly.</p>
+                    </div>
+                    <div class="p-4 bg-cfh-dark rounded-lg">
+                        <i class="fas fa-user-group text-cfh-green text-2xl mb-2"></i>
+                        <h3 class="font-semibold text-white">Community</h3>
+                        <p class="text-sm text-gray-400">We grow together, supporting and encouraging each other.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-cfh-dark-lighter rounded-xl p-8 md:p-12 shadow-lg mb-16">
+                <h2 class="text-3xl font-bold text-center text-white mb-6">What We Do</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-cfh-dark rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Who We Are</h3>
+                        <p class="text-gray-400">
+                            CFH Chapel isn't just a Sunday service—it's a place to connect, grow, and serve. We focus on making disciples, strengthening relationships, and living out our faith in everyday life. Here, you'll find a community where you can **deepen your relationship with Jesus** and find your God-given purpose.
+                        </p>
+                    </div>
+                    <div class="bg-cfh-dark rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Our Key Areas of Focus</h3>
+                        <ul class="space-y-4 text-gray-400">
+                            <li><i class="fas fa-music text-cfh-green mr-2"></i> **Worship & Prayer:** Engaging and uplifting services centered on God.</li>
+                            <li><i class="fas fa-people-group text-cfh-green mr-2"></i> **Discipleship & Small Groups:** Hope Cells (small groups) and mentorship to help you grow in faith.</li>
+                            <li><i class="fas fa-hand-heart text-cfh-green mr-2"></i> **Community Outreach:** Serving others through evangelism and social action.</li>
+                            <li><i class="fas fa-children text-cfh-green mr-2"></i> **Children & Youth Ministries:** Helping the next generation know and love Jesus.</li>
+                            <li><i class="fas fa-user-tie text-cfh-green mr-2"></i> **Leadership Development:** Equipping people to impact their families, church, and the world.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="text-center py-10 px-6 bg-cfh-dark-lighter rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-white mb-2">You Belong Here!</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    If you are looking for a church where you can experience God's love, build meaningful relationships, and grow spiritually, we'd love to have you join us. Whether you're exploring faith or have been following Jesus for years, **you are welcome here.**
+                </p>
+                <a href="/Website/Templates/visit.html" class="mt-6 inline-block px-8 py-3 bg-cfh-gold text-cfh-dark font-bold text-lg rounded-full shadow-xl hover:bg-cfh-gold-hover transition duration-300">
+                    Plan Your Visit
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-cfh-dark py-12 border-t border-cfh-dark-lighter mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-cfh-green transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-cfh-green"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-cfh-green"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-cfh-green"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-cfh-dark-lighter pt-8 text-center text-gray-500">
+                <p>&copy; 2025 CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

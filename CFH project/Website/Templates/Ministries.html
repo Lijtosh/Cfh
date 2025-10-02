@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministries | CFH Chapel</title>
+    <link rel="canonical" href="https://www.cfhchapel.cc/Ministries"/>
+    <meta name="description" content="Discover opportunities to connect, serve, and deepen your faith through the ministries of CFH Chapel, including Worship, Youth, Children's, and Outreach.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-green': '#4CAF50',   /* Primary Green */
+                        'cfh-green-hover': '#45a049',
+                        'cfh-gold': '#FFC107',    /* Accent Gold */
+                        'cfh-gold-hover': '#e0a800', 
+                        'cfh-dark-text': '#1F2937', /* Dark text for contrast against Gold */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Define Custom Colors (Blue removed) */
+        :root {
+            --color-green-600: #4CAF50; /* Mizizi Green */
+            --color-gold-400: #FFC107;  /* Mizizi Gold */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e5e7eb;
+        }
+        /* Style for interactive cards */
+        .ministry-card, .event-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .ministry-card:hover, .event-card:hover {
+            transform: translateY(-8px);
+            /* Updated Shadow color to use Green tint */
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2); 
+        }
+        /* Tailwind custom utility for Navbar Logo */
+        .navbar-logo {
+            height: 4rem; /* h-16 equivalent */
+            width: auto;
+        }
+
+        /* --- BG VIDEO STYLES --- */
+        .hero-video-container {
+            position: relative;
+            height: 80vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.65) grayscale(0.2); 
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+        /* END BG VIDEO STYLES */
+
+        /* Responsive Mobile Menu (Hidden by Default) */
+        #mobile-menu {
+            display: none;
+        }
+        .menu-open #mobile-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <header class="bg-gray-800 shadow-xl sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="navbar-logo">
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/Website/Templates/visit.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Plan Your Visit</a>
+                <a href="/Website/Templates/Series.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="text-white font-semibold bg-cfh-green px-4 py-2 rounded-lg hover:bg-cfh-green-hover transition duration-300 shadow-md">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Give</a>
+                <a href="/Website/Templates/Contact.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Contact Us</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden bg-gray-700 pb-2">
+            <a href="/Website/Templates/visit.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Plan Your Visit</a>
+            <a href="/Website/Templates/Series.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Sermons</a>
+            <a href="/Website/Templates/Ministries.html" class="block px-4 py-2 text-white bg-cfh-green hover:bg-cfh-green-hover">Ministries</a>
+            <a href="/Website/Templates/Payment.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Give</a>
+            <a href="/Website/Templates/Contact.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Contact Us</a>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        
+        <div class="hero-video-container">
+            <video autoplay muted loop class="bg-video">
+                <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="video-overlay"></div>
+
+            <section class="hero-content text-center container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <i class="fas fa-hand-holding-heart text-cfh-gold text-6xl mb-4"></i>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-4 leading-tight">
+                    Find Your Place to <span class="text-cfh-gold">Serve</span>
+                </h1>
+                <p class="text-xl text-gray-200 max-w-4xl mx-auto mb-10 font-light">
+                    Serving God and community is the heartbeat of our church. Discover opportunities to use your gifts and build meaningful relationships across our key ministry areas.
+                </p>
+                <a href="#ministry-sign-up" class="inline-flex items-center px-10 py-3 bg-cfh-green text-white font-bold text-lg rounded-full shadow-xl hover:bg-cfh-green-hover transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-hand-holding-heart mr-3"></i> Get Involved Now
+                </a>
+            </section>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            
+            <section id="ministries" class="mb-20">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Our Core Ministries</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <div class="ministry-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-t-4 border-cfh-green">
+                        <img class="w-full h-48 object-cover" src="/Website/Static/JPG/praise.jpg" alt="Worship & Praise Ministry">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 flex items-center"><i class="fas fa-music mr-3 text-cfh-green"></i>Serve</h3>
+                            <p class="text-gray-400 text-sm">
+                                Help lead the congregation into God's presence through music, sound engineering, and media projection.
+                            </p>
+                            <a href="/Website/Templates/Join.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                Learn More &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ministry-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-t-4 border-cfh-green">
+                        <img class="w-full h-48 object-cover" src="/Website/Static/JPG/youths.jpg" alt="Youth Ministry">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 flex items-center"><i class="fas fa-users-line mr-3 text-cfh-green"></i>Youth Ministry (Teens)</h3>
+                            <p class="text-gray-400 text-sm">
+                                Mentor and guide the next generation (Ages 13-18) in spiritual growth, leadership, and impactful living.
+                            </p>
+                            <a href="/Website/Templates/Event.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                View Events &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ministry-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-t-4 border-cfh-green">
+                        <img class="w-full h-48 object-cover" src="/Website/Static/JPG/children.jpg" alt="Children's Ministry">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 flex items-center"><i class="fas fa-child-reaching mr-3 text-cfh-green"></i>Children's Ministry</h3>
+                            <p class="text-gray-400 text-sm">
+                                Invest in our youngest members (Ages 3-12), making Sunday mornings fun, safe, and foundational for their faith.
+                            </p>
+                            <a href="/Website/Templates/Children.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                Volunteer &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ministry-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-t-4 border-cfh-green">
+                        <img class="w-full h-48 object-cover" src="/Website/Static/JPG/outreach.jpg" alt="Outreach Ministry">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 flex items-center"><i class="fas fa-hand-holding-medical mr-3 text-cfh-green"></i>Outreach & Welfare</h3>
+                            <p class="text-gray-400 text-sm">
+                                Serve the needy in our local community and support global missions through practical aid and community projects.
+                            </p>
+                            <a href="/Website/Templates/volunteer.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                Join a Project &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-gray-700 my-16">
+
+            <section id="ministry-events" class="mb-20">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Upcoming Ministry Highlights</h2>
+                <p class="text-center text-lg text-gray-400 max-w-3xl mx-auto mb-10">
+                    See what our ministries have planned next! Click to learn more or register for an event.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="event-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-l-4 border-cfh-green">
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase text-cfh-green bg-cfh-green/10 px-3 py-1 rounded-full">Youth Ministry</span>
+                            <h3 class="text-2xl font-bold text-white my-3">Youth Power Night (Lock-In)</h3>
+                            <div class="space-y-2 text-gray-400 text-sm">
+                                <p class="flex items-center"><i class="fas fa-calendar-alt w-5 mr-3 text-cfh-green"></i> October 28th</p>
+                                <p class="flex items-center"><i class="fas fa-clock w-5 mr-3 text-cfh-green"></i> 7:00 PM - 7:00 AM</p>
+                                <p class="flex items-center"><i class="fas fa-location-dot w-5 mr-3 text-cfh-green"></i> CFH Chapel Main Hall</p>
+                            </div>
+                            <a href="/Website/Templates/Event.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                Register Here &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-l-4 border-yellow-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase text-yellow-500 bg-yellow-500/10 px-3 py-1 rounded-full">Children's Ministry</span>
+                            <h3 class="text-2xl font-bold text-white my-3">New Volunteer Orientation</h3>
+                            <div class="space-y-2 text-gray-400 text-sm">
+                                <p class="flex items-center"><i class="fas fa-calendar-alt w-5 mr-3 text-cfh-green"></i> November 4th</p>
+                                <p class="flex items-center"><i class="fas fa-clock w-5 mr-3 text-cfh-green"></i> 1:00 PM (After Service)</p>
+                                <p class="flex items-center"><i class="fas fa-chalkboard-user w-5 mr-3 text-cfh-green"></i> Classroom 3</p>
+                            </div>
+                            <a href="/Website/Templates/Join.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                Sign Up to Attend &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-l-4 border-red-500">
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase text-red-500 bg-red-500/10 px-3 py-1 rounded-full">Outreach</span>
+                            <h3 class="text-2xl font-bold text-white my-3">Quarterly Community Medical Camp</h3>
+                            <div class="space-y-2 text-gray-400 text-sm">
+                                <p class="flex items-center"><i class="fas fa-calendar-alt w-5 mr-3 text-cfh-green"></i> November 18th</p>
+                                <p class="flex items-center"><i class="fas fa-clock w-5 mr-3 text-cfh-green"></i> All Day (8:00 AM Start)</p>
+                                <p class="flex items-center"><i class="fas fa-hospital w-5 mr-3 text-cfh-green"></i> Local Primary School</p>
+                            </div>
+                            <a href="/Website/Templates/volunteer.html" class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">
+                                Volunteer/Donate &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <hr class="border-gray-700 my-16">
+
+            <section id="ministry-sign-up" class="bg-cfh-green text-white p-12 rounded-xl shadow-2xl text-center">
+                <h2 class="text-4xl font-extrabold mb-4">Ready to Make a Difference?</h2>
+                <p class="text-xl mb-6 max-w-3xl mx-auto">
+                    Take the first step toward finding your perfect place to serve. Click below to fill out our Ministry Interest Form!
+                </p>
+                <a href="/Website/Templates/Join.html" class="inline-block px-10 py-4 bg-cfh-gold text-cfh-dark-text font-bold text-lg rounded-full shadow-lg hover:bg-cfh-gold-hover transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-heart-circle-plus mr-3"></i> Ministry Interest Form
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-950 py-12 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-cfh-green transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-cfh-green"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-cfh-green"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-cfh-green"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const body = document.body;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            // Toggles the 'menu-open' class on the body
+            body.classList.toggle('menu-open');
+        });
+    </script>
+</body>
+</html>

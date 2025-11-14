@@ -187,7 +187,7 @@
             // --- The functional integration point (Backend API call) ---
             try {
                 // NOTE: REPLACE THIS URL with your actual backend payment processing endpoint
-                const response = await fetch('/api/process-card-donation', { 
+                const response = await fetch('/@app.route/mastercard', { 
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

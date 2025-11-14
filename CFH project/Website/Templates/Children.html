@@ -14,7 +14,7 @@
     <meta name="twitter:card" content="summary_large_image"/>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 <style>
     /* Custom Color Palette (Mizizi Theme) */
@@ -148,12 +148,25 @@
         font-size: 1.5rem;
     }
     
-    /* 5. Volunteer Form Section */
-    #volunteer-form {
-        background-color: var(--cfh-light-bg);
+    /* 5. Form Section Styling */
+    .form-card {
+        background-color: white; 
     }
-    #volunteer-form .bg-white {
-        background-color: white !important;
+    .form-card .form-control, .form-card .form-select {
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ccc;
+        color: var(--cfh-dark);
+    }
+
+    /* Child Registration Form Specific Styling */
+    #child-registration .form-control {
+        background-color: var(--cfh-dark-lighter);
+        color: white;
+    }
+    #child-registration .form-control:focus {
+        border-color: var(--cfh-gold);
+        box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
     }
     
     /* 6. Footer consistency styles (Updated to Mizizi Colors) */
@@ -219,12 +232,12 @@
                 <i class="fas fa-child fa-4x text-secondary-kids mb-3 p-3 rounded-circle bg-dark bg-opacity-75 shadow-lg"></i>
                 <h1 class="display-1 fw-bolder mb-3 text-uppercase">CFH Kids Chapel</h1>
                 <p class="lead mb-4 mx-auto fs-4 fw-light" style="max-width: 900px;">
-                    **The Best Hour of Your Child's Week!** We provide a secure, fun, and dynamic environment where kids encounter Jesus on their level.
+                    The Best Hour of Your Child's Week! We provide a secure, fun, and dynamic environment where kids encounter Jesus on their level.
                 </p>
                 
                 <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-5">
-                    <a href="#programs" class="btn btn-primary btn-lg cta-button shadow-lg">
-                        <i class="fas fa-book-open me-2"></i> See Our Programs
+                    <a href="#child-registration" class="btn btn-primary btn-lg cta-button shadow-lg">
+                        <i class="fas fa-user-plus me-2"></i> Register Your Child
                     </a>
                     <a href="#volunteer-form" class="btn btn-outline-light btn-lg cta-button fw-bold">
                         <i class="fas fa-heart-circle-plus me-2"></i> Join the Kids Team
@@ -246,7 +259,7 @@
                                 <i class="fas fa-baby program-icon fa-3x mb-3"></i>
                                 <h3 class="card-title fw-bold text-dark">Tiny Explorers</h3>
                                 <p class="text-primary fw-bold fs-5">Ages 3 - 5</p>
-                                <p class="card-text text-muted">Focus on **God is Love** through simple stories, songs, and guided play. (Nursery/Pre-K)</p>
+                                <p class="card-text text-muted">Focus on God is Love through simple stories, songs, and guided play. (Nursery/Pre-K)</p>
                             </div>
                         </div>
                     </div>
@@ -257,7 +270,7 @@
                                 <i class="fas fa-puzzle-piece program-icon fa-3x mb-3"></i>
                                 <h3 class="card-title fw-bold text-dark">Discovery Zone</h3>
                                 <p class="text-primary fw-bold fs-5">Ages 6 - 8</p>
-                                <p class="card-text text-muted">Interactive lessons and crafts teaching **core Bible truths** and basic Christian principles. (Grades 1-3)</p>
+                                <p class="card-text text-muted">Interactive lessons and crafts teaching core Bible truths and basic Christian principles. (Grades 1-3)</p>
                             </div>
                         </div>
                     </div>
@@ -268,7 +281,7 @@
                                 <i class="fas fa-school program-icon fa-3x mb-3"></i>
                                 <h3 class="card-title fw-bold text-dark">Junior Disciples</h3>
                                 <p class="text-primary fw-bold fs-5">Ages 9 - 12</p>
-                                <p class="card-text text-muted">Deeper biblical studies, leadership training, and engaging discussions focused on **living out faith**. (Grades 4-6)</p>
+                                <p class="card-text text-muted">Deeper biblical studies, leadership training, and engaging discussions focused on living out faith. (Grades 4-6)</p>
                             </div>
                         </div>
                     </div>
@@ -281,12 +294,12 @@
                 <div class="row align-items-center">
                     <div class="col-md-6 mb-4 mb-md-0">
                         <h2 class="display-6 fw-bold mb-3 text-white">Security and Trust</h2>
-                        <p class="lead">We are committed to providing a **safe, secure, and trusted environment** for every child. Our protocols give parents peace of mind so they can focus on worship.</p>
+                        <p class="lead">We are committed to providing a safe, secure, and trusted environment for every child. Our protocols give parents peace of mind so they can focus on worship.</p>
                         
                         <ul class="list-unstyled mt-4 safety-checklist">
-                            <li class="mb-2 safety-item fs-5"><i class="fas fa-check-circle me-3"></i>**Secure Check-In/Out** for authorized pickups only.</li>
-                            <li class="mb-2 safety-item fs-5"><i class="fas fa-check-circle me-3"></i>All **Volunteers are Screened and Trained**.</li>
-                            <li class="mb-2 safety-item fs-5"><i class="fas fa-check-circle me-3"></i>**Clear Health Protocols** for a sanitary environment.</li>
+                            <li class="mb-2 safety-item fs-5"><i class="fas fa-check-circle me-3"></i>Secure Check-In/Out for authorized pickups only.</li>
+                            <li class="mb-2 safety-item fs-5"><i class="fas fa-check-circle me-3"></i>All Volunteers are Screened and Trained.</li>
+                            <li class="mb-2 safety-item fs-5"><i class="fas fa-check-circle me-3"></i>Clear Health Protocols for a sanitary environment.</li>
                         </ul>
                     </div>
                     <div class="col-md-6 text-center">
@@ -295,16 +308,18 @@
                 </div>
             </div>
         </section>
-
+        
+        <!-- NEW: Volunteer Interest Form Section -->
         <section id="volunteer-form" class="py-5" style="background-color: var(--cfh-light-bg);">
             <div class="container">
                 <h2 class="text-center display-5 fw-bold mb-5 text-dark">Ready to Make a Difference?</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="p-5 bg-white rounded-3 shadow-lg text-center border-top border-5 border-primary">
+                        <div class="p-5 form-card rounded-3 shadow-lg text-center border-top border-5 border-primary">
                             <p class="lead mb-4 text-muted">Volunteering in CFH Kids is an incredible opportunity to impact the next generation. Sign up below, and we'll help you find the perfect fit!</p>
                             
-                            <form action="submit-join.php" method="POST" id="kidsVolunteerForm" class="row g-3">
+                            <!-- NOTE: Form action points to the new Flask route /submit-volunteer-interest -->
+                            <form action="/submit-volunteer-interest" method="POST" id="kidsVolunteerForm" class="row g-3">
                                 <div class="col-md-6">
                                     <input type="text" id="volName" name="fullName" class="form-control form-control-lg" placeholder="Full Name *" required>
                                 </div>
@@ -325,6 +340,52 @@
                                         <i class="fas fa-heart-circle-plus me-2"></i> Submit My Interest
                                     </button>
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Child Registration Form Section -->
+        <section id="child-registration" class="py-5" style="background-color: var(--cfh-dark);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="w-full bg-cfh-dark-lighter p-8 md:p-10 rounded-xl shadow-2xl border-t-8 border-cfh-gold">
+                            <div class="text-center mb-8">
+                                <i class="fas fa-child text-5xl text-cfh-green mb-3"></i>
+                                <h2 class="text-3xl font-bold text-white">CFH Kids Sunday School Registration</h2>
+                                <p class="text-gray-400 mt-2">Securely register your child for our program before you arrive!</p>
+                            </div>
+                        
+                            <!-- The form action MUST match the Flask route /register-children -->
+                            <form action="/register-children" method="POST" class="space-y-6">
+                            
+                                <div>
+                                    <label for="childName" class="block text-sm font-medium text-gray-300 mb-1">Child's Full Name </label>
+                                    <input type="text" id="childName" name="childName" required 
+                                        class="form-control">
+                                </div>
+                                <div>
+                                    <label for="age" class="block text-sm font-medium text-gray-300 mb-1">Age </label>
+                                    <input type="number" id="age" name="age" required min="1" max="18"
+                                        class="form-control">
+                                </div>
+                                <div>
+                                    <label for="parentName" class="block text-sm font-medium text-gray-300 mb-1">Parent/Guardian Name </label>
+                                    <input type="text" id="parentName" name="parentName" required
+                                        class="form-control">
+                                </div>
+                                <div>
+                                    <label for="contact" class="block text-sm font-medium text-gray-300 mb-1">Contact Number (or Email) </label>
+                                    <input type="text" id="contact" name="contact" required
+                                        class="form-control">
+                                </div>
+                                <button type="submit" 
+                                        class="w-full bg-cfh-gold text-cfh-dark font-bold py-3 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-[1.01]">
+                                    <i class="fas fa-user-plus mr-2"></i> Complete Registration
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -381,25 +442,40 @@
         // Set current year in the footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // ------------------ Form Submission Handling ------------------
-        document.getElementById('kidsVolunteerForm').addEventListener("submit", function(event) {
+        // ------------------ Form Submission Handling (Placeholder) ------------------
+        // NOTE: Client-side JS validation/feedback for volunteer form (since it's not posting directly back to a simple HTML response page)
+        document.getElementById('kidsVolunteerForm').addEventListener("submit", async function(event) {
             event.preventDefault(); 
         
-            const nameInput = document.getElementById('volName');
-            const emailInput = document.getElementById('volEmail');
-            const interestSelect = document.getElementById('volInterest');
+            const form = event.target;
+            const nameInput = form.querySelector('[name="fullName"]').value;
+            const interestSelect = form.querySelector('[name="interest"]');
             
-            if (nameInput.value === "" || emailInput.value === "" || interestSelect.value === "") {
-                alert("Please fill out all required fields (Name, Email, and Interest selection).");
+            if (!form.checkValidity()) {
+                // If browser validation fails, do nothing, the browser will show warnings
                 return;
             }
-        
-            // Success feedback
-            const interestName = interestSelect.options[interestSelect.selectedIndex].text;
-            alert(`Thank you, ${nameInput.value}! Your interest in serving as a ${interestName} has been noted. We'll contact you soon.`);
-        
-            // Reset form after submission
-            document.getElementById('kidsVolunteerForm').reset();
+
+            // Using fetch to submit data to the Flask backend without a page reload
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(`Thank you, ${nameInput}! Your interest has been submitted. We'll contact you soon.`);
+                    form.reset();
+                } else {
+                    alert(`Submission failed: ${result.message}`);
+                }
+            } catch (error) {
+                console.error('Error submitting volunteer form:', error);
+                alert('An error occurred. Please try again later.');
+            }
         });
     </script>
 </body>

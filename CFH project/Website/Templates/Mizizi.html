@@ -8,7 +8,8 @@
     <meta name="description" content="Mizizi is a 16-week discipleship journey to help you deepen your faith, discover your purpose, and get rooted in Christ.">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Corrected Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 <style>
     /* Custom Color Palette for Mizizi: Dark, Green, Gold */
@@ -18,11 +19,12 @@
         --cfh-gold: #FFC107; /* Accent Gold (CTA) */
         --cfh-green-hover: #45a049;
         --cfh-gold-hover: #e0a800;
+        --cfh-light-text: #f3f4f6;
     }
 
     body {
         background-color: var(--cfh-dark);
-        color: #f3f4f6; /* Light gray text for contrast */
+        color: var(--cfh-light-text); /* Light gray text for contrast */
         font-family: 'Inter', sans-serif; /* Keep consistent font family */
     }
 
@@ -32,7 +34,9 @@
         --bs-btn-border-color: var(--cfh-gold) !important;
         --bs-btn-hover-bg: var(--cfh-gold-hover) !important;
         --bs-btn-hover-border-color: var(--cfh-gold-hover) !important;
-        color: var(--cfh-dark) !important;
+        /* Ensured text color is white for high contrast against gold */
+        color: #ffffff !important; 
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow for depth */
     }
     .text-primary { color: var(--cfh-green) !important; }
     .border-primary { border-color: var(--cfh-green) !important; }
@@ -49,8 +53,6 @@
         height: 80vh; 
         overflow: hidden;
         padding-top: 56px; 
-        /* REMOVED background-image: url('/Website/Static/JPG/strong-tree-roots.jpg'); */
-        /* REMOVED background-size, background-position */
     }
     
     /* Full-screen video element */
@@ -104,9 +106,11 @@
     .icon-feature {
         background-color: #2c3a4d; /* Slightly lighter dark background for contrast */
         transition: transform 0.3s ease;
+        border-radius: 1rem;
     }
     .icon-feature:hover {
         transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     }
     .feature-icon-circle {
         width: 70px;
@@ -127,6 +131,7 @@
         background-color: #2c3a4d;
         border-left: 5px solid var(--cfh-green);
         min-height: 150px;
+        border-radius: 1rem;
     }
     .testimonial-quote {
         color: var(--cfh-green);
@@ -144,6 +149,12 @@
         color: var(--cfh-dark) !important;
         border-color: var(--cfh-green);
     }
+
+    /* Custom Footer Styling for better separation/contrast */
+    .footer a:hover {
+        color: var(--cfh-green) !important;
+    }
+
 </style>
 </head>
 <body>
@@ -162,6 +173,7 @@
                     <li class="nav-item"><a href="/Website/Templates/visit.html" class="nav-link">Plan Your Visit</a></li>
                     <li class="nav-item"><a href="/Website/Templates/Series.html" class="nav-link">Sermons</a></li>
                     <li class="nav-item"><a href="/Website/Templates/Ministries.html" class="nav-link">Ministries</a></li>
+                    <!-- NOTE: Removed text-dark from btn-primary as primary is gold and should have white text -->
                     <li class="nav-item"><a href="/Website/Templates/Payment.html" class="btn btn-outline-light ms-lg-3 my-2 my-lg-0">Give</a></li>
                     <li class="nav-item"><a href="/Website/Templates/Contact.html" class="nav-link">Contact Us</a></li>
                 </ul>
@@ -186,7 +198,7 @@
             </p>
             
             <a href="/Website/Templates/Program.html" class="btn btn-primary btn-lg cta-button fw-bold shadow-lg">
-                👉 Join the Next Mizizi Class
+                <i class="fas fa-hand-point-right me-2"></i> Join the Next Mizizi Class
             </a>
         </div>
     </header>
@@ -235,7 +247,7 @@
                 </div>
                 
                 <p class="fs-5 fw-bold text-white">
-                    You’ll learn. You’ll share. You’ll grow. Most of all, you’ll be **rooted in Christ.
+                    You’ll learn. You’ll share. You’ll grow. Most of all, you’ll be **rooted in Christ.**
                 </p>
             </div>
         </section>  
@@ -273,12 +285,12 @@
                             </li>
                             <li class="d-flex align-items-start mb-3">
                                 <i class="fas fa-leaf text-primary me-3 mt-1 fa-2x"></i>
-                                <div>Be equipped to impact your family, workplace, and the world.**</div>
+                                <div>Be equipped to impact your family, workplace, and the world.</div>
                             </li>
                         </ul>
                         
                         <a href="/Website/Templates/Program.html" class="btn btn-primary btn-lg cta-button fw-bold mt-4 shadow-lg">
-                            👉 Register Today
+                            <i class="fas fa-pen-to-square me-2"></i> Register Today
                         </a>
                     </div>
                 </div>
@@ -390,7 +402,7 @@
                                 <i class="fas fa-check-circle text-primary me-3"></i> You are looking for community and accountability.
                             </li>
                             <li class="list-group-item bg-transparent text-white border-secondary">
-                                <i class="fas fa-check-circle text-primary me-3"></i> You want to live out your faith** at home, at work, and in the world.
+                                <i class="fas fa-check-circle text-primary me-3"></i> You want to live out your faith at home, at work, and in the world.
                             </li>
                         </ul>
                     </div>
@@ -398,7 +410,7 @@
             </div>
         </section>
 
-        <section id="register" class="py-5 py-md-5 text-center bg-dark">
+        <section id="register" class="py-5 py-md-5 text-center">
             <div class="container p-5 rounded shadow-lg" style="background-color: #2c3a4d;">
                 <h2 class="display-5 fw-bolder mb-3">
                     Take the Next Step in Your Faith Journey
@@ -409,10 +421,10 @@
                 
                 <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
                     <a href="/Website/Templates/Program.html" class="btn btn-primary btn-lg cta-button fw-bold shadow-lg">
-                        👉 Join Mizizi
+                        <i class="fas fa-arrow-right me-2"></i> Join Mizizi
                     </a>
                     <a href="#" class="btn btn-outline-custom btn-lg cta-button fw-bold shadow-lg">
-                        Learn More
+                        <i class="fas fa-circle-info me-2"></i> Learn More
                     </a>
                 </div>
 

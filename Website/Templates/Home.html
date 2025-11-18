@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CFH Chapel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-dark': '#1F2937',    /* Deep Navy/Dark Gray (Body/Footer) */
+                        'cfh-dark-lighter': '#2c3a4d', /* For card backgrounds/forms */
+                        'cfh-green': '#4CAF50',   /* Primary Green (Accents/Icons/Hover) */
+                        'cfh-green-hover': '#45a049', 
+                        'cfh-gold': '#FFC107',    /* Accent Gold (Primary CTA/Focus Ring) */
+                        'cfh-gold-hover': '#e0a800', 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles using Mizizi dark color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Keeping original dark body background */
+            color: #e5e7eb;
+        }
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3; 
+        }
+        .bg-gradient-overlay {
+            /* Adjusting gradient to blend into the new dark theme background */
+            background-image: linear-gradient(to top, rgba(13, 17, 23, 1) 20%, rgba(13, 17, 23, 0.5));
+        }
+        .header-bg {
+            background-color: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        /* Custom background for the Worship Section */
+        .bg-dark-accent {
+            background-color: rgba(31, 41, 55, 0.8); /* cfh-dark with transparency */
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <video autoplay muted loop class="bg-video">
+        <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+    </video>
+
+    <header class="sticky top-0 z-50 header-bg shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/Website/Templates/Home.html" class="text-white bg-cfh-green px-3 py-2 rounded-md hover:bg-cfh-green-hover transition duration-300">Home</a>
+                <a href="/Website/Templates/visit.html" class="text-gray-300 hover:text-white transition duration-200">Plan Your Visit</a>
+                <a href="/Website/Templates/Series.html" class="text-gray-300 hover:text-white transition duration-200">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="text-gray-300 hover:text-white transition duration-200">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="text-gray-300 hover:text-white transition duration-200">Give</a>
+                <a href="/Website/Templates/Contact.html" class="text-gray-300 hover:text-white transition duration-200">Contact Us</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <a href="/Website/Templates/Home.html" class="block px-4 py-2 text-sm text-white bg-cfh-green hover:bg-cfh-green-hover">Home</a>
+            <a href="/Website/Templates/visit.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Plan Your Visit</a>
+            <a href="/Website/Templates/Series.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Sermons</a>
+            <a href="/Website/Templates/Ministries.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Ministries</a>
+            <a href="/Website/Templates/Payment.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Give</a>
+            <a href="/Website/Templates/Contact.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-screen flex items-center justify-center text-center px-4">
+            <div class="absolute inset-0 bg-gradient-overlay z-0"></div> <div class="z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-4">
+                    Welcome to <span class="text-cfh-green">CFH Chapel</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto mb-8">
+                    A place to worship, connect, and grow in faith.
+                </p>
+                <a href="/Website/Templates/visit.html" class="px-8 py-4 bg-cfh-gold text-cfh-dark font-bold rounded-full shadow-xl hover:bg-cfh-gold-hover transition duration-300 transform hover:scale-105">
+                    Join Us This Sunday
+                </a>
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-cfh-green animate-bounce">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-dark-accent">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-2">Join Us for Worship</h2>
+                <p class="text-lg text-cfh-green mb-12">We gather every week to celebrate, worship, and learn together.</p>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-cfh-dark-lighter p-8 rounded-xl shadow-lg flex items-start space-x-6">
+                        <i class="fas fa-clock text-4xl text-cfh-green mt-1"></i>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Sunday Service</h3>
+                            <p class="text-gray-300 text-lg">Every Sunday at <span class="font-semibold text-white">10:00 AM</span></p>
+                            <p class="text-gray-400 mt-1">Our services last about 90 minutes and feature contemporary worship music and a relevant message.</p>
+                        </div>
+                    </div>
+                    <div class="bg-cfh-dark-lighter p-8 rounded-xl shadow-lg flex items-start space-x-6">
+                         <i class="fas fa-map-marker-alt text-4xl text-cfh-green mt-1"></i>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Our Location</h3>
+                            <p class="text-gray-300 text-lg"><span class="font-semibold text-white">Ruiru, Kenya</span></p>
+                            <p class="text-gray-400 mt-1">Find us just off the main road. There's plenty of parking available.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ruiru" target="_blank" class="mt-4 inline-block text-cfh-gold font-semibold hover:text-cfh-gold-hover transition duration-200">
+                                Get Directions →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-12">Our Core Beliefs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-cfh-dark-lighter rounded-xl p-8 shadow-lg">
+                        <i class="fas fa-cross text-4xl text-cfh-green mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Delivering Hope</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            At CFH Chapel, we exist to deliver hope by sharing the love of Jesus and walking alongside each other in faith to make a real difference in our communities.
+                        </p>
+                    </div>
+                    <div class="bg-cfh-dark-lighter rounded-xl p-8 shadow-lg">
+                         <i class="fas fa-eye text-4xl text-cfh-green mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Our Vision</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We are a family that loves Christ above all, loves each other deeply, and discovers and uses our God-given gifts for His service.
+                        </p>
+                    </div>
+                    <div class="bg-cfh-dark-lighter rounded-xl p-8 shadow-lg col-span-1 md:col-span-2 lg:col-span-1">
+                         <i class="fas fa-hand-holding-heart text-4xl text-cfh-green mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">What We Do</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We focus on making disciples, strengthening relationships, and living out our faith in everyday life. Our mission is to help you deepen your relationship with Jesus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-cfh-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">You Belong Here!</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                    Whether you are exploring faith or have been following Jesus for years, you are welcome here. We can't wait to meet you!
+                </p>
+                <a href="/Website/Templates/About.html" class="px-8 py-3 bg-cfh-green text-white font-bold text-lg rounded-full shadow-xl hover:bg-cfh-green-hover transition duration-300">
+                    Read More About Us
+                </a>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-white">Experience a Recent Message</h2>
+                    <p class="text-lg text-gray-400 mt-2">Get a feel for our teaching. Here's our latest sermon.</p>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
+                        <iframe src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <p class="text-cfh-gold font-semibold">Current Series: The Good Life</p>
+                        <h3 class="text-3xl font-bold text-white mt-2">Finding Joy in Everyday Moments</h3>
+                        <p class="text-gray-400 mt-4 leading-relaxed">
+                            In this message, we explore how to find true, lasting joy not in grand events, but in the simple, everyday moments that God grants us.
+                        </p>
+                        <a href="/Website/Templates/Series.html" class="mt-6 inline-block px-8 py-3 bg-cfh-gold text-cfh-dark font-bold rounded-full shadow-xl hover:bg-cfh-gold-hover transition duration-300">
+                            Watch More Sermons
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-white mb-8">Discover Our Ministries</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="/Website/Templates/Mizizi.html" class="bg-cfh-dark-lighter rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold text-white mb-2">Mizizi 1</h3>
+                        <p class="text-gray-400">Discover a place to grow in your faith, connect with others, and serve the community.</p>
+                        <span class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">Learn More →</span>
+                    </a>
+                    <a href="/Website/Templates/Mizizi.html" class="bg-cfh-dark-lighter rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold text-white mb-2">Mizizi 2</h3>
+                        <p class="text-gray-400">Our ministries offer opportunities to serve, grow, and connect with people who share your values.</p>
+                        <span class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">Learn More →</span>
+                    </a>
+                    <a href="/Website/Templates/Mizizi.html" class="bg-cfh-dark-lighter rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold text-white mb-2">Mizizi 3</h3>
+                        <p class="text-gray-400">Find a group that fits your life and helps you live out your faith in a meaningful way.</p>
+                        <span class="mt-4 inline-block text-cfh-green hover:text-cfh-green-hover font-semibold transition duration-200">Learn More →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 py-12 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-cfh-green transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-cfh-green transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-cfh-green"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-cfh-green"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-cfh-green"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-cfh-green transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>© 2025 CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

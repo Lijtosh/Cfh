@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministries | CFH Chapel</title>
+    <link rel="canonical" href="https://www.cfhchapel.cc/Ministries"/>
+    <meta name="description" content="Find your place to connect, serve, and grow at CFH Chapel. Explore our ministries for Worship, Youth, Children, Outreach, and Community Groups.">
+    <meta property="og:title" content="Ministries | Cfh Chapel"/>
+    <meta property="og:url" content="https://www.cfhchapel.cc/Ministries"/>
+    <meta property="og:site_name" content="Cfh Chapel"/>
+    <meta property="og:type" content="website"/>
+    <script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"Cfh Chapel","url":"https://www.cfhchapel.cc"}</script>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Ministries | Cfh Chapel"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+<style>
+    /* Custom CSS and Color Palette for Mizizi Green/Gold Theme */
+    :root {
+        --cfh-green: #4CAF50;   /* Primary Green */
+        --cfh-green-rgb: 76, 175, 80;
+        --cfh-green-hover: #45a049;
+        --cfh-gold: #FFC107;    /* Accent Gold */
+        --cfh-gold-rgb: 255, 193, 7;
+        --cfh-dark-text: #1F2937; /* Dark text for contrast against Gold */
+        --cfh-dark: #212529;
+        
+        /* Setting the main primary color to Green */
+        --cfh-primary: var(--cfh-green); 
+        --cfh-primary-rgb: var(--cfh-green-rgb);
+        --cfh-primary-hover: var(--cfh-green-hover);
+    }
+
+    /* Override Bootstrap primary with Green */
+    .btn-primary, .bg-primary, .text-primary, .border-primary {
+        --bs-primary-rgb: var(--cfh-primary-rgb) !important;
+        --bs-primary: var(--cfh-primary) !important;
+        --bs-btn-bg: var(--cfh-primary) !important;
+        --bs-btn-border-color: var(--cfh-primary) !important;
+        --bs-btn-hover-bg: var(--cfh-primary-hover) !important;
+        --bs-btn-hover-border-color: var(--cfh-primary-hover) !important;
+        --bs-btn-active-bg: var(--cfh-primary-hover) !important;
+        --bs-btn-active-border-color: var(--cfh-primary-hover) !important;
+    }
+
+    .navbar-logo {
+        width: 150px; 
+        height: auto;
+    }
+    
+    /* --- HERO SECTION WITH VIDEO BACKGROUND --- */
+    .ministry-hero {
+        position: relative;
+        min-height: 50vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+    }
+    
+    .bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        filter: brightness(0.7); 
+    }
+    
+    .ministry-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4); 
+        z-index: 1;
+    }
+    .ministry-hero .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Ministry Card Styling */
+    .ministry-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 1rem;
+        height: 100%;
+        overflow: hidden;
+    }
+    .ministry-card:hover {
+        transform: translateY(-5px);
+        /* Adding a subtle Green shadow on hover */
+        box-shadow: 0 15px 30px rgba(var(--cfh-primary-rgb), 0.3);
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .card-icon {
+        /* Icons use Green via .text-primary defined above */
+        color: var(--cfh-primary);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cta-button {
+        border-radius: 50px; 
+        font-weight: bold;
+    }
+    
+    /* Custom style for the Gold CTA button in the hero */
+    .btn-gold {
+        background-color: var(--cfh-gold) !important;
+        color: var(--cfh-dark-text) !important;
+        border-color: var(--cfh-gold) !important;
+    }
+    .btn-gold:hover {
+        background-color: #e0a800 !important; /* cfh-gold-hover */
+        border-color: #e0a800 !important;
+    }
+
+    /* Footer consistency styles - Using Tailwind classes in the HTML, defining hover colors here for safety */
+    .footer-col a:hover {
+        color: var(--cfh-primary) !important;
+    }
+    .social-links a:hover {
+        color: var(--cfh-primary) !important; 
+    }
+
+    /* --- Scroll to Top Button (Refactored) --- */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        z-index: 1050;
+        display: none; /* Initially hidden, becomes flex on scroll */
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        transform: translateY(10px);
+    }
+    
+    .scroll-to-top.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- ADDED HOME LINK -->
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Home.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/visit.html" class="nav-link">Plan Your Visit</a>
+                    </li>
+                    <!-- ADDED ABOUT US LINK -->
+                    <li class="nav-item">
+                        <a href="/Website/Templates/About.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Series.html" class="nav-link">Sermons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Ministries.html" class="nav-link active fw-bold" aria-current="page">Ministries</a>
+                    </li>
+                    <!-- Give button kept separate for styling -->
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Payment.html" class="btn btn-outline-light ms-lg-3 my-2 my-lg-0">Give</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Website/Templates/Contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <header class="ministry-hero">
+            
+            <video autoplay muted loop class="bg-video">
+                <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="container text-center">
+                <i class="fas fa-people-group fa-4x text-primary mb-3"></i>
+                <h1 class="display-1 fw-bolder mb-3">Find Your Place to Serve</h1>
+                <p class="lead mb-4 mx-auto fs-5" style="max-width: 900px;">
+                    We believe every person has God-given talents. Discover our various ministries and take the step to connect, grow, and make a real difference in our church and community.
+                </p>
+                <a href="#volunteer-cta" class="btn btn-lg fw-bold px-5 py-3 shadow-lg cta-button btn-gold">
+                    Join a Team Today
+                </a>
+            </div>
+        </header>
+
+        <section id="ministry-grid" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center display-5 fw-bold mb-5 text-dark">Our Ministry Pillars</h2>
+                
+                <div class="row g-4">
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ministry-card shadow border-0">
+                            <img src="/Website/Static/JPG/worship-ministry.jpg" class="card-img-top" alt="Worship Team">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-microphone-alt card-icon"></i>
+                                <h3 class="card-title fw-bold text-dark">Worship & Tech</h3>
+                                <p class="card-text text-muted">Help lead the congregation into God's presence through music, sound, lighting, and media projection.</p>
+                                <a href="#volunteer-cta" class="btn btn-outline-primary cta-button mt-2">Volunteer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ministry-card shadow border-0">
+                            <img src="/Website/Static/JPG/kids-ministry-placeholder.jpg" class="card-img-top" alt="Children laughing">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-child card-icon"></i>
+                                <h3 class="card-title fw-bold text-dark">CFH Kids Chapel</h3>
+                                <p class="card-text text-muted">Serve in our fun, safe, and dynamic Sunday program for children aged 3 to 12. Shape the future!</p>
+                                <a href="/Website/Templates/Children.html" class="btn btn-primary cta-button mt-2">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ministry-card shadow border-0">
+                            <img src="/Website/Static/JPG/youth-ministry.jpg" class="card-img-top" alt="Youth Group meeting">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-user-graduate card-icon"></i>
+                                <h3 class="card-title fw-bold text-dark">Teens for Hope (Youth)</h3>
+                                <p class="card-text text-muted">Mentor, guide, and connect with teenagers (Ages 13-18) as they navigate faith and life decisions.</p>
+                                <a href="#volunteer-cta" class="btn btn-outline-primary cta-button mt-2">Volunteer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ministry-card shadow border-0">
+                            <img src="/Website/Static/JPG/outreach-ministry.jpg" class="card-img-top" alt="Community Outreach">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-hand-holding-heart card-icon"></i>
+                                <h3 class="card-title fw-bold text-dark">Outreach & Missions</h3>
+                                <p class="card-text text-muted">Put feet to your faith by serving the less fortunate in our local community and supporting missions abroad.</p>
+                                <a href="/Website/Templates/Contact.html" class="btn btn-outline-primary cta-button mt-2">Get Involved</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ministry-card shadow border-0">
+                            <img src="/Website/Static/JPG/hospitality-ministry.jpg" class="card-img-top" alt="People shaking hands">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-smile card-icon"></i>
+                                <h3 class="card-title fw-bold text-dark">Hospitality & Welcome</h3>
+                                <p class="card-text text-muted">Be the first friendly face guests see! Help with parking, greeting, seating, and new visitor connection.</p>
+                                <a href="#volunteer-cta" class="btn btn-outline-primary cta-button mt-2">Volunteer</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ministry-card shadow border-0">
+                            <img src="/Website/Static/JPG/hope-cells.jpg" class="card-img-top" alt="Small group meeting">
+                            <div class="card-body p-4 text-center">
+                                <i class="fas fa-users card-icon"></i>
+                                <h3 class="card-title fw-bold text-dark">Hope Cells (Small Groups)</h3>
+                                <p class="card-text text-muted">Join a mid-week group for fellowship, deep Bible study, and prayer. Where life happens!</p>
+                                <a href="/Website/Templates/Contact.html" class="btn btn-primary cta-button mt-2">Find a Cell</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="volunteer-cta" class="py-5 bg-dark text-white text-center">
+            <div class="container">
+                <h2 class="display-4 fw-bold mb-3">Ready to Make an Impact?</h2>
+                <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+                    Whether you have five hours a week or two hours a month, your time and talents are invaluable. Click below to fill out our simple volunteer form.
+                </p>
+                <a href="/Website/Templates/Join.html" class="btn btn-primary btn-lg fw-bold px-5 py-3 shadow-lg cta-button">
+                    <i class="fas fa-hand-heart me-2"></i> Sign Up to Serve
+                </a>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-950 py-12 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-[#4CAF50]"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-[#4CAF50]"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-[#4CAF50]"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-[#4CAF50] transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-[#4CAF50] transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-[#4CAF50] transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set current year in the footer
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) {
+             currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        // ------------------ Scroll-to-Top Button (Refactored) ------------------
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        // Applying classes defined in the <style> block
+        scrollToTopBtn.classList.add('btn', 'btn-primary', 'scroll-to-top', 'shadow');
+        document.body.appendChild(scrollToTopBtn);
+        
+        // Show/Hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          const isScrolled = window.scrollY > 400;
+          scrollToTopBtn.classList.toggle('show', isScrolled);
+        });
+
+        // Scroll to top on click
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

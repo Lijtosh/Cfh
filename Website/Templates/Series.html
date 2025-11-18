@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons | Cfh Chapel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-green': '#4CAF50',   /* Primary Green */
+                        'cfh-green-hover': '#45a049',
+                        'cfh-gold': '#FFC107',    /* Accent Gold (Primary CTA) */
+                        'cfh-gold-hover': '#e0a800', 
+                        'cfh-dark-text': '#1F2937', /* Dark text for contrast against Gold */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e5e7eb;
+        }
+        .sermon-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sermon-card:hover {
+            transform: translateY(-8px);
+            /* Updated shadow color from blue to a Green/Gold tint (using cfh-green RGB 76, 175, 80) */
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        }
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.08; /* Reduced opacity to be less distracting */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <video autoplay muted loop class="bg-video">
+        <source src="/Website/Static/JPG/young-people-singing-and-dancing-at-a-concert-rear-view-SBV-327927158-preview(1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/Website/Templates/Home.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Home</a>
+                <a href="/Website/Templates/visit.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Plan Your Visit</a>
+                <!-- ADDED About Us Link -->
+                <a href="/Website/Templates/About.html" class="text-gray-300 hover:text-cfh-green transition duration-200">About Us</a>
+                <a href="/Website/Templates/Series.html" class="text-white bg-cfh-green px-3 py-2 rounded-md hover:bg-cfh-green-hover transition duration-300">Sermons</a>
+                <a href="/Website/Templates/Ministries.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Ministries</a>
+                <a href="/Website/Templates/Payment.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Give</a>
+                <a href="/Website/Templates/Contact.html" class="text-gray-300 hover:text-cfh-green transition duration-200">Contact Us</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <a href="/Website/Templates/Home.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+            <a href="/Website/Templates/visit.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Plan Your Visit</a>
+            <!-- ADDED About Us Link -->
+            <a href="/Website/Templates/About.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">About Us</a>
+            <a href="/Website/Templates/Series.html" class="block px-4 py-2 text-sm text-white bg-cfh-green hover:bg-cfh-green-hover">Sermons</a>
+            <a href="/Website/Templates/Ministries.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Ministries</a>
+            <a href="/Website/Templates/Payment.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Give</a>
+            <a href="/Website/Templates/Contact.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
+        </div>
+    </header>
+    
+    <main class="min-h-screen pt-24 pb-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-cfh-green font-semibold uppercase tracking-wider">Messages of Hope</span>
+                <h1 class="text-6xl font-extrabold mt-2 mb-4">Latest Sermons & Series</h1>
+                <p class="text-gray-400 max-w-3xl mx-auto">Catch up on Sunday messages, dive deeper into the Word, and find inspiration for your daily journey of faith.</p>
+            </div>
+
+            <!-- Latest Series Section -->
+            <h2 class="text-4xl font-bold mb-8 border-b border-gray-700 pb-3">Featured Series: Unshakeable Foundations</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Sermon Card 1 -->
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden sermon-card">
+                    <img src="/Website/Static/JPG/cfh.png" alt="Sermon thumbnail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cfh-gold uppercase font-bold">Cfh Chapel</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-3 hover:text-cfh-green transition">Super Hope cell  </h3>
+                        <p class="text-gray-400 mb-4 text-sm">| Acts 2:42-47 | Sunday March 24,2024</p>
+                        <a href="https://www.youtube.com/watch?v=qJt08U25x8k&t=426s" class="inline-flex items-center text-cfh-green hover:text-cfh-gold font-semibold">
+                            Watch Now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sermon Card 2 -->
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden sermon-card">
+                    <img src="/Website/Static/livingstone.png" alt="Sermon thumbnail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cfh-gold uppercase font-bold">Acts Chapter 1</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-3 hover:text-cfh-green transition">EXPECT THE PROMISE: ACTS CHAPTER 1</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Pastor Livingstone | November 3, 2020</p>
+                        <a href="https://www.youtube.com/watch?v=cIKx8aiPo5E&t=475s" class="inline-flex items-center text-cfh-green hover:text-cfh-gold font-semibold">
+                            Watch Now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sermon Card 3 -->
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden sermon-card">
+                    <img src="/Website/Static/wqe.png" alt="Sermon thumbnail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cfh-gold uppercase font-bold">Unlock </span>
+                        <h3 class="text-2xl font-bold mt-1 mb-3 hover:text-cfh-green transition">Unlock Through Prayers & Fasting  </h3>
+                        <p class="text-gray-400 mb-4 text-sm">Cfh | November 10, 2025</p>
+                        <a href="https://www.youtube.com/watch?v=UOScf-KqjWY" class="inline-flex items-center text-cfh-green hover:text-cfh-gold font-semibold">
+                            Watch Now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Sermon Card 1 -->
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden sermon-card">
+                    <img src="/Website/Static/detsch.png" alt="Sermon thumbnail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cfh-gold uppercase font-bold">detach</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-3 hover:text-cfh-green transition">The Rock of Faith</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Cfh Chapel | October 27, 2020</p>
+                        <a href="#" class="inline-flex items-center text-cfh-green hover:text-cfh-gold font-semibold">
+                            Watch Now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sermon Card 2 -->
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden sermon-card">
+                    <img src="/Website/Static/livingstone.png" alt="Sermon thumbnail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cfh-gold uppercase font-bold">Part 2 of 4</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-3 hover:text-cfh-green transition">Weathering the Storm</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Pastor Jane Smith | November 3, 2025</p>
+                        <a href="#" class="inline-flex items-center text-cfh-green hover:text-cfh-gold font-semibold">
+                            Watch Now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sermon Card 3 -->
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden sermon-card">
+                    <img src="/Website/Static/wqe.png" alt="Sermon thumbnail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-cfh-gold uppercase font-bold">Part 3 of 4</span>
+                        <h3 class="text-2xl font-bold mt-1 mb-3 hover:text-cfh-green transition">The Builder's Blueprint</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Pastor John Doe | November 10, 2025</p>
+                        <a href="#" class="inline-flex items-center text-cfh-green hover:text-cfh-gold font-semibold">
+                            Watch Now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Archive CTA -->
+            <div class="text-center bg-gray-800 p-8 rounded-xl shadow-2xl">
+                <h3 class="text-3xl font-bold mb-3">Explore the Full Archive</h3>
+                <p class="text-gray-400 mb-6">Filter by series, topic, or date to find exactly the message you need.</p>
+                <a href="https://www.youtube.com/@cfhchapel2018" class="bg-cfh-gold text-cfh-dark-text font-bold py-3 px-8 rounded-full shadow-lg hover:bg-cfh-gold-hover transition duration-300 transform hover:scale-105 inline-flex items-center">
+                    <i class="fas fa-folder-open mr-2"></i> Browse All Messages
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-950 py-12 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="mb-4 md:mb-0">
+                    <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400">Delivering Hope, Building Faith.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/Website/Templates/Home.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-gray-400 hover:text-[#4CAF50] transition duration-200">Give</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-location-dot w-4 text-center text-[#4CAF50]"></i><span>Ruiru</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-phone w-4 text-center text-[#4CAF50]"></i><span>0791043805 | 0720950828</span></li>
+                        <li class="flex items-center space-x-3 text-gray-400"><i class="fas fa-envelope w-4 text-center text-[#4CAF50]"></i><span>cfhmin@gmail.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-gray-400 hover:text-[#4CAF50] transition duration-200"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-gray-400 hover:text-[#4CAF50] transition duration-200"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-gray-400 hover:text-[#4CAF50] transition duration-200"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 CFH Chapel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // ------------------ Scroll-to-Top Button ------------------
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollToTopBtn.classList.add('fixed', 'bottom-4', 'right-4', 'bg-cfh-green', 'text-white', 'p-3', 'rounded-full', 'shadow-lg', 'hover:bg-cfh-green-hover', 'transition', 'duration-300', 'z-50', 'hidden');
+        document.body.appendChild(scrollToTopBtn);
+        
+        window.addEventListener('scroll', () => {
+          const isScrolled = window.scrollY > 400;
+          scrollToTopBtn.classList.toggle('hidden', !isScrolled);
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mizizi Discipleship Program | CFH Chapel</title>
+    <link rel="canonical" href="https://www.cfhchapel.cc/mizizi"/>
+    <meta name="description" content="Mizizi is a 16-week discipleship journey to help you deepen your faith, discover your purpose, and get rooted in Christ.">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ6x8c+0pT+eA0YwG9/KABgNuxbSgN8f5K1n7tM0qD6yA9Wj9QJ1zN3q9+w+KkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+<style>
+    /* Custom Color Palette for Mizizi: Dark, Green, Gold */
+    :root {
+        --cfh-dark: #1F2937; /* Deep Navy/Dark Gray (Primary BG) */
+        --cfh-dark-lighter: #2c3a4d; /* Secondary BG / Card BG */
+        --cfh-green: #4CAF50; /* Primary Green (Growth/Accent) */
+        --cfh-gold: #FFC107; /* Accent Gold (CTA/Action) */
+        --cfh-green-hover: #45a049;
+        --cfh-gold-hover: #e0a800;
+    }
+
+    body {
+        background-color: var(--cfh-dark);
+        color: #f3f4f6; 
+        font-family: 'Inter', sans-serif; 
+    }
+
+    /* Primary Color Overrides */
+    .text-primary { color: var(--cfh-green) !important; }
+    .btn-primary {
+        --bs-btn-bg: var(--cfh-gold) !important;
+        --bs-btn-border-color: var(--cfh-gold) !important;
+        --bs-btn-hover-bg: var(--cfh-gold-hover) !important;
+        --bs-btn-hover-border-color: var(--cfh-gold-hover) !important;
+        color: var(--cfh-dark) !important;
+    }
+    
+    .btn-outline-custom {
+        color: var(--cfh-green);
+        border-color: var(--cfh-green);
+    }
+    .btn-outline-custom:hover {
+        background-color: var(--cfh-green);
+        color: var(--cfh-dark) !important;
+        border-color: var(--cfh-green);
+    }
+
+    /* Navbar Logo */
+    .navbar-logo {
+        width: 150px; 
+        height: auto;
+    }
+
+    /* Hero Section (Video Background) */
+    .hero-section {
+        position: relative;
+        height: 80vh; 
+        overflow: hidden;
+        padding-top: 56px; 
+    }
+    .hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.15; 
+    }
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.55); 
+        z-index: 1;
+    }
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        padding-top: 50px; 
+        padding-bottom: 50px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Feature/Icon Styling */
+    .icon-feature {
+        background-color: var(--cfh-dark-lighter);
+        transition: transform 0.3s ease;
+        border-radius: 0.5rem;
+    }
+    .icon-feature:hover {
+        transform: translateY(-5px);
+    }
+    .feature-icon-circle {
+        width: 70px;
+        height: 70px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--cfh-green);
+        color: white;
+        border-radius: 50%;
+        font-size: 2rem;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* CTA Button Style */
+    .cta-button {
+        min-width: 280px;
+        border-radius: 50px; 
+        font-size: 1.25rem;
+        padding: 10px 30px;
+    }
+</style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="/Website/Templates/Home.html">
+                <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="/Website/Templates/visit.html" class="nav-link">Plan Your Visit</a></li>
+                    <li class="nav-item"><a href="/Website/Templates/Series.html" class="nav-link">Sermons</a></li>
+                    <li class="nav-item"><a href="/Website/Templates/Ministries.html" class="nav-link">Ministries</a></li>
+                    <li class="nav-item"><a href="/Website/Templates/Payment.html" class="btn btn-outline-light ms-lg-3 my-2 my-lg-0">Give</a></li>
+                    <li class="nav-item"><a href="/Website/Templates/Contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+        
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="/Website/Static/JPG/hands-dancing-crowd-SBV-311318519-preview.mp4" type="video/mp4">
+            </video>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="container position-relative z-1 hero-text">
+            <h1 class="display-1 fw-bolder mb-4">
+                <span class="text-primary">🌱</span> Get Rooted in Christ, Live Fruitfully
+            </h1> 
+            <p class="lead mb-5 fs-4 fw-light mx-auto" style="max-width: 850px;">
+                Mizizi is a **16-week discipleship journey** designed to help you deepen your faith, discover your purpose, and grow in a supportive community.
+            </p>
+            
+            <a href="#register" class="btn btn-primary btn-lg cta-button fw-bold shadow-lg">
+                👉 Join the Next Class Now
+            </a>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="what-is" class="py-5 bg-dark">
+            <div class="container text-center">
+                <h2 class="display-5 fw-bold mb-4 text-primary">
+                    Mizizi means “roots” — and every disciple needs deep roots.
+                </h2>
+                <p class="lead mb-5 mx-auto text-white-50" style="max-width: 800px;">
+                    This program focuses on the five essential pillars of Christian growth, ensuring your foundation is unshakable.
+                </p>
+
+                <div class="row g-4 justify-content-center mb-5">
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="p-4 shadow icon-feature h-100">
+                            <div class="feature-icon-circle"><i class="fas fa-book-bible"></i></div>
+                            <p class="fw-bold mb-0">Scripture</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="p-4 shadow icon-feature h-100">
+                            <div class="feature-icon-circle"><i class="fas fa-hands-praying"></i></div>
+                            <p class="fw-bold mb-0">Prayer</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="p-4 shadow icon-feature h-100">
+                            <div class="feature-icon-circle"><i class="fas fa-user-group"></i></div>
+                            <p class="fw-bold mb-0">Community</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="p-4 shadow icon-feature h-100">
+                            <div class="feature-icon-circle"><i class="fas fa-hand-holding-heart"></i></div>
+                            <p class="fw-bold mb-0">Service</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="p-4 shadow icon-feature h-100">
+                            <div class="feature-icon-circle"><i class="fas fa-gift"></i></div>
+                            <p class="fw-bold mb-0">Gifts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+        
+        <hr class="container my-5 border-secondary">
+
+        <section id="benefits" class="py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5">
+                    Your Investment in Faith: What You Will Gain.
+                </h2>
+                
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="/Website/Static/JPG/Hope.webp" alt="Smiling group of people in community" class="img-fluid rounded shadow-lg">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled fs-5">
+                            <li class="d-flex align-items-start mb-4">
+                                <i class="fas fa-check-circle text-primary me-3 mt-1 fa-2x"></i>
+                                <div>**Deep Connection:** Establish strong, consistent habits of prayer and Bible study.</div>
+                            </li>
+                            <li class="d-flex align-items-start mb-4">
+                                <i class="fas fa-check-circle text-primary me-3 mt-1 fa-2x"></i>
+                                <div>**Clarity of Purpose:** Discover your unique spiritual gifts and where you fit in God's plan.</div>
+                            </li>
+                            <li class="d-flex align-items-start mb-4">
+                                <i class="fas fa-check-circle text-primary me-3 mt-1 fa-2x"></i>
+                                <div>**Lasting Community:** Build authentic, supportive relationships in a dedicated small group.</div>
+                            </li>
+                            <li class="d-flex align-items-start mb-4">
+                                <i class="fas fa-check-circle text-primary me-3 mt-1 fa-2x"></i>
+                                <div>**Practical Application:** Learn how to apply biblical principles to your job, family, and finances.</div>
+                            </li>
+                        </ul>
+                        
+                        <div class="text-center text-lg-start mt-4">
+                            <a href="#register" class="btn btn-primary btn-lg cta-button fw-bold shadow-lg">
+                                Register & Start Growing
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="container my-5 border-secondary">
+
+        <section id="how-it-works" class="py-5 bg-dark-lighter">
+            <div class="container text-center">
+                <h2 class="display-5 fw-bold mb-5">Simple. Practical. Transformational.</h2>
+                
+                <div class="row g-4 justify-content-center mb-5">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-4 rounded shadow icon-feature h-100">
+                            <i class="fas fa-calendar-alt text-primary fa-3x mb-3"></i>
+                            <h4 class="fw-bold text-white">16 Weeks</h4>
+                            <p class="text-white-50">One weekly session (in-person or online) with homework and reflection.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-4 rounded shadow icon-feature h-100">
+                            <i class="fas fa-users-line text-primary fa-3x mb-3"></i>
+                            <h4 class="fw-bold text-white">Small Group Focus</h4>
+                            <p class="text-white-50">Intimate groups of 8-12 for deep sharing, accountability, and prayer.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-4 rounded shadow icon-feature h-100">
+                            <i class="fas fa-book-open text-primary fa-3x mb-3"></i>
+                            <h4 class="fw-bold text-white">Dedicated Guidebook</h4>
+                            <p class="text-white-50">Receive the Mizizi Manual to guide your weekly study and growth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <h4 class="fw-bold mb-3 text-primary">Need more convincing? Watch our program overview!</h4>
+                    <div class="ratio ratio-16x9 mx-auto rounded shadow-lg" style="max-width: 700px;">
+                        <iframe src="https://www.youtube.com/embed/optional-mizizi-video-id" title="Mizizi Program Explainer Video" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="container my-5 border-secondary">
+
+        <section id="register" class="py-5 py-md-5 text-center">
+            <div class="container p-5 rounded shadow-lg" style="background-color: var(--cfh-dark-lighter);">
+                <h2 class="display-4 fw-bolder mb-3 text-white">
+                    Ready to Plant Your Faith?
+                </h2>
+                <p class="lead mb-5 mx-auto text-white-50" style="max-width: 700px;">
+                    The next Mizizi class is forming now. Spaces are limited to maintain high quality and small group intimacy. Don’t miss your opportunity!
+                </p>
+                
+                <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                    <a href="/Website/Templates/Register.html" class="btn btn-primary btn-lg cta-button fw-bold shadow-lg">
+                        ✅ Secure My Spot
+                    </a>
+                    <a href="#who-can-join" class="btn btn-outline-custom btn-lg cta-button fw-bold shadow-lg">
+                        Learn More & FAQs
+                    </a>
+                </div>
+
+                <div class="mt-4 text-white-50">
+                    <small>Next Class Start Date: **October 20, 2025**</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3 border-top border-secondary">
+        <div class="container">
+            <div class="row border-bottom border-secondary pb-4 mb-4">
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <a href="/Website/Templates/Home.html">
+                        <img src="/Website/Static/JPG/cfh_Logo_2023.png" alt="CFH Chapel Logo" class="navbar-logo mb-3">
+                    </a>
+                    <p class="text-white-50">Delivering Hope, Building Faith.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="/Website/Templates/Home.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="/Website/Templates/About.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="/Website/Templates/Series.html" class="text-white-50 text-decoration-none">Sermons</a></li>
+                        <li><a href="/Website/Templates/Ministries.html" class="text-white-50 text-decoration-none">Ministries</a></li>
+                        <li><a href="/Website/Templates/Payment.html" class="text-white-50 text-decoration-none">Give</a></li>
+                        <li><a href="/Website/Templates/mizizi-register.html" class="text-primary text-decoration-none">Register for Mizizi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">Contact Info</h3>
+                    <ul class="list-unstyled">
+                       <li><a href="#" class="text-white-50 text-decoration-none"><i class="fas fa-map-marker-alt me-2 text-primary"></i>Ruiru, Kenya</a></li>
+                       <li><a href="tel:0791043805" class="text-white-50 text-decoration-none"><i class="fas fa-phone me-2 text-primary"></i>0791043805</a></li>
+                       <li><a href="mailto:cfhmin@gmail.com" class="text-white-50 text-decoration-none"><i class="fas fa-envelope me-2 text-primary"></i>cfhmin@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer-col mb-4">
+                    <h3 class="text-uppercase mb-3 border-bottom border-primary pb-2">Follow Us</h3>
+                    <div class="social-links d-flex gap-3">
+                        <a href="https://www.facebook.com/cfhchapel" class="text-white"><i class="fab fa-facebook-f fa-2x"></i></a>
+                        <a href="https://www.tiktok.com/@cfh_chapel" class="text-white"><i class="fab fa-tiktok fa-2x"></i></a>
+                        <a href="https://www.instagram.com/cfh_chapel" class="text-white"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-white-50">
+                © <span id="currentYear">2025</span> CFH Chapel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

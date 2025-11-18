@@ -1,0 +1,7 @@
+Flask==3.0.3
+pymysql==1.1.1
+requests==2.32.3
+paypalrestsdk==2.0.0
+# Add any other libraries you use, especially the Mastercard SDK
+# (Replace with the actual library name and version)
+# mastercard-api-client==X.Y.Z

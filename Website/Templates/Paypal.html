@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Donation Form | CFH Chapel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Configure Tailwind to use the custom Mizizi color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfh-green': '#4CAF50',   /* Primary Green */
+                        'cfh-green-hover': '#45a049',
+                        'cfh-gold': '#FFC107',    /* Accent Gold (Primary CTA/Focus Ring) */
+                        'cfh-gold-hover': '#e0a800', 
+                        'cfh-dark-text': '#1F2937', /* Dark text for contrast against Gold */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8">
+        <div class="flex flex-col items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">CFH Chapel Secure Donation</h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Official PayPal Logo" class="h-16 mt-4">
+            <p class="text-sm text-gray-500 mt-2">Proceeds are used to support our ministries.</p>
+        </div>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="space-y-6">
+
+            <input type="hidden" name="cmd" value="_donations">
+            
+            <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL_OR_SECURE_ID_HERE">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="item_name" value="CFH Chapel Ministry Donation"> 
+            
+            <div>
+                <label for="amount" class="block text-gray-700 font-medium mb-1">Enter Donation Amount (e.g., 50.00)</label>
+                <input type="number" id="amount" name="amount" placeholder="50.00" min="1" step="0.01" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cfh-green transition duration-200">
+            </div>
+
+            <div>
+                <label for="fullName" class="block text-gray-700 font-medium mb-1">Your Name (Optional)</label>
+                <input type="text" id="fullName" name="custom" placeholder="John Doe (Optional)" 
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cfh-green transition duration-200">
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-cfh-gold text-cfh-dark-text font-bold py-3 px-4 rounded-lg shadow-md hover:bg-cfh-gold-hover focus:outline-none focus:ring-2 focus:ring-cfh-green focus:ring-offset-2 transition duration-200">
+                Proceed to Secure PayPal Payment 🚀
+            </button>
+            
+            <p class="text-xs text-center text-gray-500 pt-2">You will be redirected to PayPal's secure website to complete the transaction.</p>
+        </form>
+    </div>
+
+</body>
+</html>
